@@ -1,0 +1,133 @@
+body, ul, li, p{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+body {
+    background-color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+b {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header {
+    background-color: #1d1e20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.link {
+    text-decoration: underline;
+    color: blue;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.teste {
+    width: 100%;
+}
+
+.grid-container {
+    margin: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 5fr 3fr;
+}
+
+.perfil {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: #2d4370;
+}
+
+.dados {
+    margin-bottom: 50px;
+}
+
+.imagem-perfil {
+    margin-left: 30px;
+    margin-right: 20px;
+    height: 150px;
+}
+
+.bandeira-jogador {
+    height: 35px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+}
+
+.nickname {
+    font-size: 40;
+    font-style: normal;
+}
+
+.nome {
+    margin-left: 5px;
+    opacity: 80%;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 15;
+    font-style: italic;
+    opacity: 40%;
+}
+
+.teste1 {
+    grid-row: 1/5;
+    grid-column: 1/2;
+}
+
+.teste2 {
+    border: solid 2px #1d1e20
+}
+
+.teste3 {
+    border: solid 2px #1d1e20
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(0,0,0);
+}
