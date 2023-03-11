@@ -1,56 +1,198 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css" />
-        <title>Chess</title>
-    </head>
 
-    <body>
-        <header class="header">
-            <a>Logo</a>
-            <nav>
-                <ul class="menu">
-                    <li><a>jogar</a></li>
-                    <li><a>perfil</a></li>
-                    <li><a>configuração</a></li>
-                </ul>
-            </nav>
-        </header>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="normalize-min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Chess</title>
+</head>
 
+<body>
 
-        <div class="grid-container">
-            <div class="teste1">
-                <div class="perfil">
-                    <img src="/asset_imagem/Captura de tela 2023-03-11 160749.png" alt="imagem-perfil" class="imagem-perfil">
-                    <div class="dados">
-                        <div class="nickname">
-                            <b>Theiv47</b>
-                        </div>
-                        <div class="nome">
-                            <a>Davi Barbosa</a>
-                        </div>
-                        <div class="status">
-                            <a>insira um status aqui</a>
-                        </div>
-                    </div>
-                    <img src="/asset_imagem/bandeiragrande.jpg" alt="bandeira-jogador" class="bandeira-jogador">
-                </div>
-                
-                <h1>teste1</h1>
-                <h1>aaaaa</h1>
-                <h1>fsdffsdf</h1>
-                <h1>tesfdsdfsdf</h1>
-                <h1>sdfdsfsf</h1>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">início</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+          aria-expanded="false">Jogar</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">rapid-10 minutos</a></li>
+          <li><a class="dropdown-item" href="#">blitz-3 minutos</a></li>
+          <li><a class="dropdown-item" href="#">bullet-1 minuto</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link ">configurações</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">configurações</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              jogar
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Rapid</a></li>
+              <li><a class="dropdown-item" href="#">Blitz</a></li>
+              <li><a class="dropdown-item" href="#">Bullet</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+  <div class="grid-container">
+    <div class="perfil-container">
+      <div class="perfil">
+        <img src="/asset_imagem/Captura de tela 2023-03-11 160749.png" alt="imagem-perfil" class="imagem-perfil">
+        <div class="dados">
+          <div class="nickname">
+            <b>Theiv47</b>
+          </div>
+          <div class="nome">
+            <p>Davi Barbosa</p>
+          </div>
+          <div class="status">
+            <p>insira um status aqui</p>
+          </div>
+          <div class="rating-container">
+            <div class="rating-container-child">
+              rapid <br> XXX
             </div>
-            <h1 class="teste2">teste2</h1>
-            <h1 class="teste3">teste3</h1>
-
+            <div class="rating-container-child">
+              blitz <br> XXX
+            </div>
+            <div class="rating-container-child">
+              bullet <br> XXX
+            </div>
+          </div>
         </div>
+        <img src="/asset_imagem/bandeiragrande.jpg" alt="bandeira-jogador" class="bandeira-jogador">
+      </div>
+    </div>
+    <div class="accordion rating" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+            collapse plugin adds the appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+            modify any of this with custom CSS or overriding our default variables. It's also worth noting
+            that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+            collapse plugin adds the appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+            modify any of this with custom CSS or overriding our default variables. It's also worth noting
+            that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+            collapse plugin adds the appropriate classes that we use to style each element. These classes
+            control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+            modify any of this with custom CSS or overriding our default variables. It's also worth noting
+            that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table historico">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">jogadores</th>
+          <th scope="col">placar</th>
+          <th scope="col">data</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <th scope="row">
+            <div class="match-result"></div>
+          </th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
 
 
 
-        <!-- <div class="wrapper">
+
+  <!-- <div class="wrapper">
             <div class="form-box login">
                 <h2>Login</h2>
                 <form action="#">
@@ -69,5 +211,8 @@
             </div>
         </div> -->
 
-    </body>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </html>
