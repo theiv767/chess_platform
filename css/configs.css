@@ -1,4 +1,30 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: #2d4370;
+}
+
+p {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}
+
+b {
+    text-decoration: none;
+    color: white;
+}
+
+
 html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 main { display: block; }

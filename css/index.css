@@ -1,37 +1,4 @@
-:root {
 
-}
-
-
-
-
-body, ul, li, p{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    font-size: 1.2rem;
-    font-family: Arial;
-}
-
-body {
-    background-color: beige;
-}
-
-a {
-    text-decoration: none;
-    color: #2d4370;
-}
-
-p {
-    text-decoration: none;
-    color: white;
-    margin: 0;
-}
-
-b {
-    text-decoration: none;
-    color: white;
-}
 
 .match-result {
     height: 10px;
