@@ -51,6 +51,7 @@
     grid-gap: 20px;
     grid-template-columns: 5fr 3fr;
     grid-template-areas: "perfil rating"
+                         "historico rating"
                          "historico rating";
 }
 
