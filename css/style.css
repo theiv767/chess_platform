@@ -22,6 +22,7 @@
   --light: #f8f9fa;
   --dark-nav: #21242b;
   --dark-bg: #2D3038;
+  --light-dark: #3E424D;
 
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -111,6 +112,11 @@ html, body {
 
 .accordion-dark .accordion-body {
   color: #fff;
+}
+
+.bg-light-dark{
+  background-color: var(--light-dark);
+
 }
 
 
