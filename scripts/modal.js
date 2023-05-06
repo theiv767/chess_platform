@@ -1,15 +1,12 @@
-const openModal = document.querySelector("#open-modal")
-const closeModal = document.querySelector("#close-modal")
+function abrirModal(){
+    const modal = document.getElementById('janela-modal')
+    modal.classList.add('abrir')
+    console.log("buceta")
 
-
-const modal = document.querySelector("#modal")
-
-
-const toggleModal = () => {
-    modal.classList.toggle("hide")
+    modal.addEventListener('click', (e) => {
+        if(e.target.id == 'close-modal' || e.target.id == 'janela-modal'){
+            console.log("teste")
+            modal.classList.remove('abrir')
+        }
+    })
 }
-
-
-[openModal, closeModal].forEach((el) =>{
-    el.addEventListener("click", () => toggleModal())
-})
