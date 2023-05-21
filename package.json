@@ -1,14 +1,14 @@
 {
   "name": "chess_platform",
   "version": "1.0.0",
-  "description": "",
+  "description": "online chess platform made with axios, bootstrap, nodejs and mongoDB",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "theiv767",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.22"
