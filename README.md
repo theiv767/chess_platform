@@ -1,5 +1,7 @@
 # Plataforma de Xadrez
 
+![status](https://img.shields.io/badge/Status-Em%20desenvolvimento-green)
+
 Este repositório contém uma plataforma de xadrez onde os usuários podem jogar partidas uns contra os outros em uma interface amigável. Além disso, os jogadores podem visualizar suas estatísticas de jogo, incluindo partidas jogadas, rating e um gráfico de evolução do jogador.
 
 ## Recursos
