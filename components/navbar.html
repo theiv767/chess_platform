@@ -16,19 +16,53 @@
         Chess
       </a>
 
-      <ul class="nav nav-underline bg-dark-nav  mr-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a id="perfil-link" class="nav-link text-white" aria-current="page" href="perfil.html">Perfil</a>
+          <a id="perfil-link" class="nav-link" aria-current="page" href="perfil.html">Perfil</a>
         </li>
         <li class="nav-item">
-          <a id="chessBoard-link" class="nav-link text-white" href="chessBoard.html">Jogar</a>
+          <a id="chessBoard-link" class="nav-link" href="chessBoard.html">Jogar</a>
         </li>
         <li class="nav-item">
-          <a id="config-link" class="nav-link text-white" href="config.html">Configurações</a>
+          <a id="config-link" class="nav-link" href="config.html">Configurações</a>
         </li>
       </ul>
 
-      <button type="button" class="btn btn-outline-success">Entrar</button>
+
+
+
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="../assets/img/perfil/perfil.png"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
 
     </div>
   </nav>
