@@ -33,6 +33,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
+*{
+  border-color: var(--secondary);
+}
+
 .janela-modal{
   display: none;
   width: 100%;
@@ -298,16 +302,16 @@ html, body {
 
 
 .accordion-dark {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-nav);
   color: #fff;
 }
 
 .accordion-dark .accordion-header {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-nav);
 }
 
 .accordion-dark .accordion-button:not(.collapsed) {
-  background-color: var(--dark-nav);
+  background-color: var(--dark-bg);
   color: #fff;
 }
 
@@ -316,7 +320,7 @@ html, body {
 }
 
 .accordion-dark .accordion-button.collapsed {
-  background-color: var(--dark-nav);
+  background-color: var(--dark-bg);
   color: #fff;
 }
 
@@ -344,4 +348,10 @@ html, body {
 }
 .vh-95 {
   height: 95vh !important;
+}
+
+
+.border-light-dark{
+  border-color: var(--light-dark);
+
 }
