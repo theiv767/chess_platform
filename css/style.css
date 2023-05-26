@@ -1,5 +1,6 @@
 
 :root {
+  
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -217,123 +218,133 @@ form input[type="submit"]::hover {
 }
 
 .footer .social-field {
-  padding: 0.4rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  width: 100%;
-  cursor: pointer;
-  margin-top: 0.5rem;
+  padding: 0.4rem !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  width: 100% !important; 
+  cursor: pointer !important;
+  margin-top: 0.5rem !important;
 }
 
 .footer .sign-up {
-  margin-left: 25%;
-  margin-top: 0.7rem;
+  margin-left: 25% !important;
+  margin-top: 0.7rem !important;
 }
 
 .footer .terms a{
-  font-size: 0.8rem;
-  margin: 0 0.5rem;
+  font-size: 0.8rem !important;
+  margin: 0 0.5rem !important; 
 }
 
 .footer .social-field a i {
-  margin: 0 0.5rem;
-  width: 15px;
+  margin: 0 0.5rem !important;
+  width: 15px !important;
 }
 
 .footer .social-field a {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }
 
 .footer .social-field.Twitter {
-  background: #56a7f2;
+  background: #56a7f2 !important;
 }
 
 .footer .social-field.Google {
-  background: #1e3c72;
-}
-
-
-
-html, body {
-  width: 100%;
-  margin: 0;
-    border: 0;
-    padding: 0;
+  background: #1e3c72 !important;
 }
 
 .bg-dark-bg{
-  background-color:  var(--dark-bg);
+  background-color:  var(--dark-bg) !important;
 }
 
 .bg-dark-nav{
-  background-color: var(--dark-nav);
+  background-color: var(--dark-nav) !important;
   
 }
 
+.separator-1vw{
+  width: 1vw !important;
+}
+
+.separator-2vw{
+  width: 2vw !important;
+}
+
+.separator-3vw{
+  width: 3vw !important;
+}
 
 .separator-5vw{
-  width: 5vw;
+  width: 5vw !important;
 }
 .separator-10vw{
-  width: 10vw;
+  width: 10vw !important;
 }
 .separator-20vw{
-  width: 20vw;
+  width: 20vw !important; 
 }
 .separator-30vw{
-  width: 30vw;
+  width: 30vw !important;
 }
 .separator-40vw{
-  width: 40vw;
+  width: 40vw !important;
 }
 .separator-50vw{
-  width: 50vw;
+  width: 50vw !important;
 }
 .separator-60vw{
-  width: 60vw;
+  width: 60vw !important;
 }
 .separator-70vw{
-  width: 70vw;
+  width: 70vw !important;
 }
 .separator-80vw{
-  width: 80vw;
+  width: 80vw !important;
 }
 
 
 .accordion-dark {
   background-color: var(--dark-nav);
-  color: #fff;
+  color: #fff !important;
 }
 
 .accordion-dark .accordion-header {
-  background-color: var(--dark-nav);
+  background-color: var(--dark-nav) !important;
 }
 
 .accordion-dark .accordion-button:not(.collapsed) {
   background-color: var(--dark-bg);
-  color: #fff;
+  color: #fff !important;
 }
 
 .accordion-dark .accordion-button::after {
-  color: #fff;
+  color: #fff !important;
 }
 
 .accordion-dark .accordion-button.collapsed {
   background-color: var(--dark-bg);
-  color: #fff;
+  color: #fff !important;
 }
 
 .accordion-dark .accordion-header button {
-  color: #fff;
+  color: #fff !important;
 }
 
 .accordion-dark .accordion-body {
-  color: #fff;
+  color: #fff !important;
 }
 
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../assets/img/perfil/collapse-accordion.png) !important;
+}
+.accordion-button::after {
+  background-image: url(../assets/img/perfil/collapse-accordion.png) !important;
+}
+
+
 .bg-light-dark{
-  background-color: var(--light-dark);
+  background-color: var(--light-dark) !important;
 
 }
 
@@ -352,6 +363,13 @@ html, body {
 
 
 .border-light-dark{
-  border-color: var(--light-dark);
+  border-color: var(--light-dark) !important;
 
+}
+
+
+
+
+.table{
+  border-color: var(--light-dark) !important;
 }

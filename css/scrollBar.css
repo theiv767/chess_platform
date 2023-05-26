@@ -31,7 +31,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #0f0f0f;
+    background-color: #1b1b1e;
     border-radius: 50px;
     border: 2px solid var(--dark-bg);
 }

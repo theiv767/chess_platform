@@ -25,7 +25,6 @@ axios.get(nav)
       const currentLink = document.getElementById(current + '-link');
 
       if (currentLink) {
-        console.log("aqui: " + currentLink)
         currentLink.classList.add('active');
       }
     }
