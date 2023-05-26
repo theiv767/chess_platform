@@ -2,6 +2,7 @@
 
 <head>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
   <style>
     body {
       padding-top: 58px;
@@ -12,7 +13,6 @@
 
 
 <body>
-  
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark-nav fixed-top">
     <div class="container-fluid">
 
@@ -29,13 +29,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a id="perfil-link" class="nav-link" aria-current="page" href="perfil.html">Perfil</a>
+            <a id="perfil-link" class="nav-link link-navigation" aria-current="page" href="perfil.html">Perfil</a>
           </li>
           <li class="nav-item">
-            <a id="chessBoard-link" class="nav-link" href="chessBoard.html">Jogar</a>
+            <a id="chessBoard-link" class="nav-link link-navigation" href="chessBoard.html">Jogar</a>
           </li>
           <li class="nav-item">
-            <a id="config-link" class="nav-link" href="config.html">Configurações</a>
+            <a id="config-link " class="nav-link link-navigation" href="config.html">Configurações</a>
           </li>
         </ul>
       </div>
@@ -50,9 +50,12 @@
           <img src="../assets/img/perfil/perfilGTI.jpg" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Perfil</a></li>
-          <li><a class="dropdown-item" href="#">Configurações</a></li>
-          <li><a class="dropdown-item" href="#">Sair</a></li>
+          <li><a class="dropdown-item link-navigation" href="perfil.html">Perfil</a></li>
+          <li><a class="dropdown-item link-navigation" href="config.html">Configurações</a></li>
+          <li style="padding-right: 2px; padding-left: 2px;">
+            <a class="dropdown-item" href="../index.html" style="background-color: rgba(255, 74, 74, 0.199);">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i></i> Sair
+            </a></li>
         </ul>
       </div>
 

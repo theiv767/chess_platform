@@ -8,19 +8,15 @@ axios.get(nav)
     document.getElementById(container).innerHTML = response.data;
 
     if (current == 'home') {
-      const linkPerfil = document.getElementById('perfil-link');
-      const linkChessboar = document.getElementById('chessBoard-link');
-      const linkConfig = document.getElementById('config-link');
+      const links = document.getElementsByClassName('link-navigation');
 
-      if (linkPerfil) {
-        linkPerfil.setAttribute('href', 'pages/perfil.html');
+      if(links){
+        for(var element of links){
+          console.log(element.setAttribute('href', 'pages/'+element.getAttribute("href")))
+        }
       }
-      if (linkChessboar) {
-        linkChessboar.setAttribute('href', 'pages/ChessBoard.html');
-      }
-      if (linkConfig) {
-        linkConfig.setAttribute('href', 'pages/config.html');
-      }
+      
+
     } else {
       const currentLink = document.getElementById(current + '-link');
 
