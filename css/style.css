@@ -342,6 +342,14 @@ form input[type="submit"]::hover {
   background-image: url(../assets/img/perfil/collapse-accordion.png) !important;
 }
 
+.accordion-body{
+  max-height: 284px; overflow-y: auto !important;
+}
+
+.accordion-wrapper{
+  max-height: 545px !important;
+}
+
 
 .bg-light-dark{
   background-color: var(--light-dark) !important;
