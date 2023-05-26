@@ -6,166 +6,184 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/style.css" />
-  <title>Document</title>
+  <title>Chess</title>
 
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="../css/chessBoard.css" />
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="../css/scrollBar.css" />
 
-  <link rel="stylesheet" href="../css/scrollBar.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <style>
+    .square {
+      height: 5vw !important;
+      min-height: 26px;
+      
+    }
+
+    .square.white {
+      background-color: #828a9f;
+    }
+
+    .square.dark {
+      background-color: #24272e;
+    }
+  </style>
 </head>
+  
+
+
 
 <body class="bg-dark-bg">
+
   <nav id="navbar-container"></nav>
 
   <div class="container-fluid">
     <div class="row m-4">
       <div class="col-6">
-        <div class="container text-center">
+        <div class="container text-center" style="min-width: 200px; min-height: 200px;">
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
           </div>
 
           <div class="row">
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #24272e"></div>
+            <div class="col square dark"></div>
 
-            <div class="col" style="width: 5vw; height: 5vw; background-color: #828a9f"></div>
+            <div class="col square white"></div>
           </div>
         </div>
       </div>
@@ -181,20 +199,16 @@
     </div>
   </div>
 
+
+  
   <footer id="footer-container"></footer>
 
-
-
-
-
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script src="../scripts/navigation.js" data-nav="../components/navbar.html" data-navcontainer="navbar-container"
     data-current="chessBoard"></script>
 
-  <script src="../scripts/load-html.js" data-load="../components/footer.html" data-element="footer-container">
-  </script>
+  <script src="../scripts/load-html.js" data-load="../components/footer.html" data-element="footer-container"></script>
 </body>
 
 </html>

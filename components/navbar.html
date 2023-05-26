@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="../css/style.css">
   <style>
     body {
       padding-top: 58px;
@@ -11,6 +12,7 @@
 
 
 <body>
+  
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark-nav fixed-top">
     <div class="container-fluid">
 
@@ -20,7 +22,8 @@
         Chess
       </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,31 +40,26 @@
         </ul>
       </div>
 
-      
-      
+
+
 
 
       <div class="dropdown">
-        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar"
-          role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-          <img src="../assets/img/perfil/perfilGTI.jpg" class="rounded-circle" height="25"
-            alt="Black and White Portrait of a Man" loading="lazy" />
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
+        <button style="background-color: var(--bg-nav-dark); border: 0px;" class="btn btn-secondary dropdown-toggle"
+          type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="../assets/img/perfil/perfilGTI.jpg" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Perfil</a></li>
+          <li><a class="dropdown-item" href="#">Configurações</a></li>
+          <li><a class="dropdown-item" href="#">Sair</a></li>
         </ul>
       </div>
 
+
     </div>
   </nav>
+
 </body>
 
 
