@@ -343,7 +343,7 @@ form input[type="submit"]::hover {
 }
 
 .accordion-body{
-  max-height: 284px; overflow-y: auto !important;
+  max-height: 305px; overflow-y: auto !important;
 }
 
 .accordion-wrapper{
