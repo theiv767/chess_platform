@@ -11,7 +11,9 @@ class Piece{
     }
 
     
-    checkMoviment(row, col){ console.log("overrride this method !!!") }
+    checkMoviment(row, col){
+        //override this method;
+    }
 
     get color() {
         return this._color;

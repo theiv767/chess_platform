@@ -1,3 +1,5 @@
+const EnumColor = require('./EnumColor.js');
+
 class ChessBoard {
     constructor() {
       this.pieces = new Array(8).fill(null).map(() => new Array(8).fill(null));
@@ -19,7 +21,7 @@ class ChessBoard {
   
 
     // CHECK METHOD
-    // ANALIZAR ESSE MÉTODO POÍS POSSÍVELMENTE NÃO ESTÁ FUNCIONAL
+    // corrigir esse setLayoutParams !!!
     movPiece(piece, row, col) {
       const test = selectedPiece.piece.checkMoviment(row, col, this);
   
@@ -43,7 +45,7 @@ class ChessBoard {
         this.pieces[row][3].setCol(3);
       }
   
-      this.pieces[row][col] = selectedPiece.getPiece();
+      this.pieces[row][col] = selectedPiece.piece;
       this.pieces[selectedPiece.getRow()][selectedPiece.getCol()] = null;
       this.pieces[row][col].getImage().setLayoutParams(squares[row][col].getLayoutParams());
       this.pieces[row][col].setRow(row);

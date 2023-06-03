@@ -5,7 +5,6 @@ class Pawn extends Piece {
     Pawn(color, row, col, srcImage) {
         super(color, row, col, srcImage);
     }
-
     
     checkMoviment(row, col, chessBoard) {
         if(this.chessBoard.turn != this.chessBoard.selectedPiece.piece.color){
