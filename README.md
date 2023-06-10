@@ -26,6 +26,6 @@ This repository contains a chess platform where users can play against each othe
 2. Clone this repository to your development environment.
 3. In the terminal, navigate to the project's root directory.
 4. Run the command `npm install` to install the dependencies.
-5. Create a `.env` file in the project's root directory and set the required environment variables (refer to the `.env.example` file for an example).
-6. Run the command npm `start to start` the backend server.
+5. Create a `.env` file in the project's root directory and set the required environment variables.
+6. Run the command `npm start` to start the backend server.
 7. Access the chess platform in your browser using the URL provided by the server.
