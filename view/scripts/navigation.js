@@ -7,24 +7,15 @@ axios.get(nav)
     // Insere o conteúdo da navbar no containero de contêiner
     document.getElementById(container).innerHTML = response.data;
 
-    if (current == 'home') {
-      const links = document.getElementsByClassName('link-navigation');
-
-      if(links){
-        for(var element of links){
-          console.log(element.setAttribute('href', 'pages/'+element.getAttribute("href")))
-        }
-      }
-      
-
-    } else {
+    if (!(current == 'home')) {
       const currentLink = document.getElementById(current + '-link');
 
       if (currentLink) {
         currentLink.classList.add('active');
       }
-    }
 
+    }
+    
   })
   .catch((error)=>{
     console.error('Error, Get content error:', error);
