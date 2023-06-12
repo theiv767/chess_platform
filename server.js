@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const mongoose = require('mongoose')
 const port = 3000;
 
 //importando as rotas de ./server/routes
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/view', 'index.html');
 });
 
+
 const chessBoardRouter = require('./server/routes/chessBoard')
 app.use('/chessBoard', chessBoardRouter);
 
@@ -36,6 +38,18 @@ app.use('/users', userRouter);
 
 //=================== EXECUÇÃO =========================================================== 
 // Inicia o servidor
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
+const banco_user = 'gmourao071'
+const banco_senha = encodeURIComponent('TpzoRs3gzpkBcHcc')
+
+mongoose.connect(
+  `mongodb+srv://${banco_user}:${banco_senha}@cluster0.ekdrx58.mongodb.net/?retryWrites=true&w=majority`
+  ).then(() =>{
+      console.log("Conectamos ao MongoDB!")
+      app.listen(port, () => {
+        console.log(`Servidor rodando em http://localhost:${port}`);
+      });
+  })
+  .catch((err) => console.log(err))
+
+
+
