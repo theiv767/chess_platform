@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const mongoose = require('mongoose')
-const port = 3000;
+const mongoose = require('mongoose');
+require('dotenv').config();
+const port = process.env.SERVER_PORT;
 
 //importando as rotas de ./server/routes
 //rotas ...
@@ -38,18 +39,15 @@ app.use('/users', userRouter);
 
 //=================== EXECUÇÃO =========================================================== 
 // Inicia o servidor
-const banco_user = 'gmourao071'
-const banco_senha = encodeURIComponent('TpzoRs3gzpkBcHcc')
+
+const banco_senha = encodeURIComponent('dbbvb327904')
 
 mongoose.connect(
-  `mongodb+srv://${banco_user}:${banco_senha}@cluster0.ekdrx58.mongodb.net/?retryWrites=true&w=majority`
+  process.env.URL_DB
   ).then(() =>{
-      console.log("Conectamos ao MongoDB!")
+      console.log("db connection success!!")
       app.listen(port, () => {
         console.log(`Servidor rodando em http://localhost:${port}`);
       });
   })
   .catch((err) => console.log(err))
-
-
-
