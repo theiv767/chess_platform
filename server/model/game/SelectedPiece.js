@@ -1,7 +1,14 @@
 // GRASP PURE FABRICATION
+const Piece = require('./Piece')
+const Bishop = require('./pieces/Bishop.js');
+const Knight = require('./pieces/Knight.js');
+const Rook = require('./pieces/Rook.js');
+const Queen = require('./pieces/Queen.js');
+const King = require('./pieces/King.js');
+const Pawn = require('./pieces/Pawn.js');
 
 class SelectedPiece {
-    SelectedPiece(row, col, piece){
+    constructor(row, col, piece){
         this._row = row;
         this._col = col;
         this._piece = piece;

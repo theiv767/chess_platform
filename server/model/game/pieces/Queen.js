@@ -2,12 +2,12 @@ const Piece = require('../Piece.js')
 
 class Queen extends Piece {
 
-    Queen(color, row, col, srcImage) {
-        super(color, row, col, srcImage);
+    constructor(color, row, col ) {
+        super(color, row, col );
     }
 
     checkMoviment(row, col, chessBoard) {
-        if(this.chessBoard.turn != this.chessBoard.selectedPiece.piece.color){
+        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
             return "false";
         }
         if(this.col == col && this.row == row){
@@ -24,8 +24,8 @@ class Queen extends Piece {
             if(row > this.row){
                 currentRow++;
                 while(currentRow < row){
-                    if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                        if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+                    if(chessBoard.getPiece(currentRow, currentCol) != null){
+                        if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                             return "false";
                         }else{
                             this.canCastle = false;
@@ -37,8 +37,8 @@ class Queen extends Piece {
             }else if(this.row > row){
                 currentRow--;
                 while(currentRow > row){
-                    if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                        if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+                    if(chessBoard.getPiece(currentRow, currentCol) != null){
+                        if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                             return "false";
                         }else{
                             this.canCastle = false;
@@ -50,8 +50,8 @@ class Queen extends Piece {
             }else if(col > this.col){
                 currentCol++;
                 while(currentCol < col){
-                    if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                        if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+                    if(chessBoard.getPiece(currentRow, currentCol) != null){
+                        if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                             return "false";
                         }else{
                             this.canCastle = false;
@@ -64,8 +64,8 @@ class Queen extends Piece {
             }else if(this.col > col){
                 currentCol--;
                 while(col < currentCol){
-                    if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                        if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+                    if(chessBoard.getPiece(currentRow, currentCol) != null){
+                        if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                             return "false";
                         }else{
                             this.canCastle = false;
@@ -75,8 +75,8 @@ class Queen extends Piece {
                     currentCol--;
                 }
             }
-            if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+            if(chessBoard.getPiece(currentRow, currentCol) != null){
+                if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                     return "false";
                 }else{
                     this.canCastle = false;
@@ -120,8 +120,8 @@ class Queen extends Piece {
             // ------
 
             while(currentRow != row && currentCol != col){
-                if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                    if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+                if(chessBoard.getPiece(currentRow, currentCol) != null){
+                    if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                         return "false";
                     }else{
                         return "CAPTURE";
@@ -138,8 +138,8 @@ class Queen extends Piece {
                     currentCol--;
 
             }
-            if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+            if(chessBoard.getPiece(currentRow, currentCol) != null){
+                if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                     return "false";
                 }else{
                     return "CAPTURE";

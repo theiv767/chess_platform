@@ -1,14 +1,14 @@
-const Piece = require('../Piece.js')
+const Piece = require('../Piece')
+const ChessBoard = require('../ChessBoard');
 
 class Bishop extends Piece {
 
-    Bishop(color, row, col, srcImage) {
-        super(color, row, col, srcImage);
-        this.canCastle = true;
+    constructor(color, row, col ) {
+        super(color, row, col );
     }
 
     checkMoviment(row, col, chessBoard){
-        if(this.chessBoard.turn != this.chessBoard.selectedPiece.piece.color){
+        if(chessBoard.turn != chessBoard.getSelectedPiece().piece.color){
             return "false";
         }
         var currentRow = this.row; // para o loop
@@ -46,8 +46,8 @@ class Bishop extends Piece {
 
 
         while(currentRow != row && currentCol != col){
-            if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-                if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+            if(chessBoard.getPiece(currentRow, currentCol) != null){
+                if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                     return "false";
                 }else{
                     return "CAPTURE";
@@ -64,8 +64,8 @@ class Bishop extends Piece {
                 currentCol--;
 
         }
-        if(this.chessBoard.getPiece(currentRow, currentCol) != null){
-            if (this.color == this.chessBoard.getPiece(currentRow, currentCol).color){
+        if(chessBoard.getPiece(currentRow, currentCol) != null){
+            if (this.color == chessBoard.getPiece(currentRow, currentCol).color){
                 return "false";
 
             }else{

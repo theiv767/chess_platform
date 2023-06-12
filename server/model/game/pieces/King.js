@@ -2,13 +2,13 @@ const Piece = require('../Piece.js')
 
 class King extends Piece{
 
-    King(color, row, col, srcImage) {
-        super(color, row, col, srcImage);
+    constructor(color, row, col ) {
+        super(color, row, col );
         this.canCastle = true;
     }
 
     checkMoviment(row, col, chessBoard){
-        if(this.chessBoard.turn != this.chessBoard.selectedPiece.piece.color){
+        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
             return "false";
         }
         if(this.col == col && this.row == row){
@@ -16,10 +16,10 @@ class King extends Piece{
         }
 
         if(col == (this.col+2)){
-            if(this.canCastle && (this.chessBoard.getPiece(row, 7) != null)){//check roque
-                if(this.chessBoard.getPiece(row, 7).canCastle){
+            if(this.canCastle && (chessBoard.getPiece(row, 7) != null)){//check roque
+                if(chessBoard.getPiece(row, 7).canCastle){
                     for(i = this.col()+1; i< col; i++){
-                        if(this.chessBoard.getPiece(row,i) != null){
+                        if(chessBoard.getPiece(row,i) != null){
                             return "false";
                         }
                     }
@@ -28,10 +28,10 @@ class King extends Piece{
                 }
             }
         }else if(col == (this.col-2)){
-            if(this.canCastle && (this.chessBoard.getPiece(row, 0) != null)){ //check grande roque
-                if(this.chessBoard.getPiece(row, 0).canCastle){
+            if(this.canCastle && (chessBoard.getPiece(row, 0) != null)){ //check grande roque
+                if(chessBoard.getPiece(row, 0).canCastle){
                     for(i = this.col-1; i>col; i--){
-                        if(this.chessBoard.getPiece(row,i) != null){
+                        if(chessBoard.getPiece(row,i) != null){
                             return "false";
                         }
                     }
@@ -41,8 +41,8 @@ class King extends Piece{
             }
         }else  if(row >= this.row-1 && row <= this.row+1 && col >= this.col-1 && col <= this.col+1){ //check movimentos normais
 
-           if(this.chessBoard.piece(row, col) != null){
-               if(this.chessBoard.getPiece(row, col).color != this.color){
+           if(chessBoard.piece(row, col) != null){
+               if(chessBoard.getPiece(row, col).color != this.color){
                    this.canCastle = false;
                    return "CAPTURE";
                }

@@ -1,13 +1,14 @@
 const Piece = require('../Piece.js')
+const EnumColor = require('../EnumColor.js')
 
 class Pawn extends Piece {
 
-    Pawn(color, row, col, srcImage) {
-        super(color, row, col, srcImage);
+    constructor(color, row, col) {
+        super(color, row, col);
     }
     
     checkMoviment(row, col, chessBoard) {
-        if(this.chessBoard.turn != this.chessBoard.selectedPiece.piece.color){
+        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
             return "false";
         }
         if(this.col == col && this.row == row){

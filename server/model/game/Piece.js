@@ -1,9 +1,11 @@
+const EnumColor = require('./EnumColor');
+const chessBoard = require('./ChessBoard');
+
 class Piece{
-    constructor(color, row, col, srcImage ){
+    constructor(color, row, col){
         this._color = color
         this._row = row
         this._col = col
-        this._srcImage = srcImage
         this._chessBoard;
         this._eliminated = false
         this._selected = false
@@ -11,7 +13,7 @@ class Piece{
     }
 
     
-    checkMoviment(row, col){
+    checkMoviment(row, col, chessBoard){
         //override this method;
     }
 
@@ -25,10 +27,6 @@ class Piece{
 
     get col() {
         return this._col;
-    }
-
-    get srcImage() {
-        return this._srcImage;
     }
 
     get chessBoard(){
@@ -57,10 +55,6 @@ class Piece{
 
     set col(col) {
         this._col = col;
-    }
-
-    set srcImage(image) {
-        this._image = image;
     }
 
     set chessBoard(chessBoard){

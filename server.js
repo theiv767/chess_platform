@@ -29,6 +29,10 @@ app.use('/perfil', perfilRouter);
 const configRouter = require('./server/routes/config')
 app.use('/config', configRouter);
 
+const userRouter = require('./server/routes/userControl');
+app.use('/users', userRouter);
+
+
 
 //=================== EXECUÇÃO =========================================================== 
 // Inicia o servidor
