@@ -85,6 +85,7 @@ for (let rows = 0; rows < 8; rows++) {
 
 
 // ADICIONANDO PEÇAS =========================================================
+//corrigir para adicionar as peças com base no que está no back-end!!!
 
 for (let pawns = 0; pawns < 8; pawns++) {
     // peões brancos
