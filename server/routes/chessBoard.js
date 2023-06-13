@@ -17,21 +17,42 @@ router.post('/squareOnClick', (req, res) =>{
     // ARRUMAR AQUI, DANDO ERRO !!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     var square = req.body.id + "";
+    console.log("id: "+ square)
     var squareRow = parseInt(square.split("-")[0]);
+    console.log("row: "+ squareRow)
     var squareCol = parseInt(square.split("-")[1]);
+    console.log("col: "+ squareCol)
+    console.log("----------------------------------")
 
+    var moviment = "";
     if (chessBoard.selectedPiece == null) {
         if (chessBoard.getPiece(squareRow , squareCol) != null) {
             chessBoard.setSelectedPiece(squareRow, squareCol);
+            console.log("selectedPiece")
             console.log(chessBoard.getSelectedPiece().piece)
         }
-        console.log("selectedPiece null")
+        res.status(200).json({
+            canMov: false
+        })
+
     } else {
-        console.log(chessBoard.movPiece(chessBoard.getSelectedPiece(), squareRow, squareCol));
+        moviment = chessBoard.movPiece(squareRow, squareCol);
+        let selectedPieceId = moviment.split("|")[1]
+        moviment = moviment.split("|")[0]
+        if(moviment == "false"){
+            res.status(200).json({
+                canMov: false
+            })
+        }else{
+            res.status(200).json({
+                canMov: true,
+                type: moviment,
+                idToMov: selectedPieceId
+            })
+        }
+       
     }
 
-
-    res.status(200).send("o id é: "+req.body.id)
 })
 
 

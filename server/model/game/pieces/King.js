@@ -8,9 +8,10 @@ class King extends Piece{
     }
 
     checkMoviment(row, col, chessBoard){
-        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
+        if(chessBoard.getTurn() != chessBoard.getSelectedPiece().piece.color){
             return "false";
         }
+        
         if(this.col == col && this.row == row){
             return "false";
         }
@@ -41,7 +42,7 @@ class King extends Piece{
             }
         }else  if(row >= this.row-1 && row <= this.row+1 && col >= this.col-1 && col <= this.col+1){ //check movimentos normais
 
-           if(chessBoard.piece(row, col) != null){
+           if(chessBoard.getPiece(row, col) != null){
                if(chessBoard.getPiece(row, col).color != this.color){
                    this.canCastle = false;
                    return "CAPTURE";

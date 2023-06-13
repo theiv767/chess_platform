@@ -1,7 +1,17 @@
-function squareOnClick(id) {
+
+// ======= CLIQUES DO TABULEIRO ==================================================
+function squareOnClick(col) {
+    var id = col.id;
     axios.post('http://localhost:3000/chessBoard/squareOnClick', { id })
     .then(response => {
       console.log(response.data);
+
+      if(response.data.canMov){
+        console.log("oi")
+        var div = document.getElementById(response.data.idToMov)
+        col.innerHTML = div.innerHTML
+        div.innerHTML = ''
+      }
     })
     .catch(error => {
       console.error('Erro:', error);
@@ -10,6 +20,7 @@ function squareOnClick(id) {
 
 
 
+//====================================================================================
 //  PREENCHER O TABULEIRO !!!
 const chessBoard = document.querySelector("#chessBoard-container");
 
@@ -21,7 +32,7 @@ for (let rows = 0; rows < 8; rows++) {
         let col = document.createElement('div')
 
         col.id = (7 - rows) + "-" + cols;;
-        col.addEventListener('click', () => squareOnClick(col.id));
+        col.addEventListener('click', () => squareOnClick(col));
 
         if (rows % 2 == 0) {
             if (cols % 2 == 0)

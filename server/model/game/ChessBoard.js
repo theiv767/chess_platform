@@ -51,14 +51,13 @@ class ChessBoard {
   // CHECK METHOD
   // corrigir esse setLayoutParams !!!
   movPiece(row, col) {
-    const test = this.getSelectedPiece().piece.checkMoviment(row, col, this);
+    var test = this.getSelectedPiece().piece.checkMoviment(row, col, this);
 
-    if (test === "false") {
+    if (test == "false") {
       this.selectedPiece = null;
-      return false;
+      return test;
 
     } else if (test === "CAPTURE") {
-      // this.pieces[row][col].getImage().setVisibility(View.INVISIBLE);
       this.pieces[row][col] = null;
     } else if (test === "CASTLE") {
       this.pieces[row][5] = this.pieces[row][7];
@@ -79,9 +78,9 @@ class ChessBoard {
 
     this.changeTurn()
 
+    test+="|"+this.getSelectedPiece().row+"-"+this.getSelectedPiece().col
     this.selectedPiece = null;
-
-    return true;
+    return test;
   }
 
 
@@ -101,7 +100,6 @@ class ChessBoard {
 
   setSelectedPiece(row, col) {
     this.selectedPiece = new SelectedPiece(row, col, this.getPiece(row, col));
-    console.log("setado")
   }
 
   getPiece(row, col) {

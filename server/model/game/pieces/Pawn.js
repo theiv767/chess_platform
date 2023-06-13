@@ -7,64 +7,69 @@ class Pawn extends Piece {
         super(color, row, col);
     }
     
-    checkMoviment(row, col, chessBoard) {
-        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
+    checkMoviment(testRow, testCol, chessBoard) {
+        if(chessBoard.getTurn() != chessBoard.getSelectedPiece().piece.color){
             return "false";
         }
-        if(this.col == col && this.row == row){
+        
+        if(this.col == testCol && this.row == testRow){
+            console.log("2")
             return "false";
         }
 
         if (this.color == EnumColor.WHITE) {
             if (this.row == 1) { // primeiro lançe que pode ser de uma ou duas casas
-                if ((row == 2 || row == 3) && (col == this.col)) {
+                if ((testRow == 2 || testRow == 3) && (testCol == this.col)) {
+                    return "DEFAULT";
+
+                }
+                // else{
+                //     console.log("3")
+                //     return "false";
+                // }
+            } 
+
+            if ((testRow == this.row + 1) && (testCol == this.col)) {
+                if (chessBoard.getPiece(testRow, testCol) == null) {
                     console.log("testeee", "defalt");
                     return "DEFAULT";
-                }else
-                    return "false";
-
-            } else {
-                if ((row == this.row + 1) && (col == this.col)) {
-                    if (chessBoard.getPiece(row, col) == null) {
-                        console.log("testeee", "defalt");
-                        return "DEFAULT";
-                    }
                 }
-                if (row == this.row + 1 && (col == this.col + 1 || col == this.col - 1)) {
-                    if (chessBoard.getPiece(row, col) == null)
-                        return "false";
-                    if (chessBoard.getPiece(row, col).color == EnumColor.DARK) {
-                        console.log("testeee", "capture");
-                        return "CAPTURE";
-                    }
-                }
-                return "false";
             }
+            if (testRow == this.row + 1 && (testRow == this.col + 1 || testCol == this.col - 1)) {
+                if (chessBoard.getPiece(testRow, testCol) == null)
+                    return "false";
+                if (chessBoard.getPiece(testRow, testCol).color == EnumColor.DARK) {
+                    console.log("testeee", "capture");
+                    return "CAPTURE";
+                }
+            }
+            return "false";
+
         } else { //lances das pretas
             if (this.row == 6) { // primeiro lançe que pode ser de uma ou duas casas
-                if ((row == 5 || row == 4) && (col == this.col)) {
+                if ((testRow == 5 || testRow == 4) && (testCol == this.col)) {
                     console.log("testeee", "defalt");
                     return "DEFAULT";
-                }else
-                    return "false";
+                }
+                // else
+                //     return "false";
 
-            } else {
-                if ((row == this.row - 1) && (col == this.col)) {
-                    if (chessBoard.getPiece(row, col) == null) {
-                        console.log("testeee", "defalt");
-                        return "DEFAULT";
-                    }
-                }
-                if (row == this.row - 1 && (col == this.col + 1 || col == this.col - 1)) {
-                    if (chessBoard.getPiece(row, col) == null)
-                        return "false";
-                    if (chessBoard.getPiece(row, col).color == EnumColor.WHITE) {
-                        console.log("testeee", "capture");
-                        return "CAPTURE";
-                    }
-                }
-                return "false";
             }
+            if ((testRow == this.row - 1) && (testCol == this.col)) {
+                if (chessBoard.getPiece(testRow, testCol) == null) {
+                    console.log("testeee", "defalt");
+                    return "DEFAULT";
+                }
+            }
+            if (testRow == this.row - 1 && (testCol == this.col + 1 || testCol == this.col - 1)) {
+                if (chessBoard.getPiece(testRow, testCol) == null)
+                    return "false";
+                if (chessBoard.getPiece(testRow, testCol).color == EnumColor.WHITE) {
+                    console.log("testeee", "capture");
+                    return "CAPTURE";
+                }
+            }
+            return "false";
         }
     }
 }

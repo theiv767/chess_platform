@@ -7,9 +7,10 @@ class Queen extends Piece {
     }
 
     checkMoviment(row, col, chessBoard) {
-        if(chessBoard.turn != chessBoard.selectedPiece.piece.color){
+        if(chessBoard.getTurn() != chessBoard.getSelectedPiece().piece.color){
             return "false";
         }
+        
         if(this.col == col && this.row == row){
             return "false";
         }

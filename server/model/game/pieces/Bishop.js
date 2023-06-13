@@ -8,7 +8,7 @@ class Bishop extends Piece {
     }
 
     checkMoviment(row, col, chessBoard){
-        if(chessBoard.turn != chessBoard.getSelectedPiece().piece.color){
+        if(chessBoard.getTurn() != chessBoard.getSelectedPiece().piece.color){
             return "false";
         }
         var currentRow = this.row; // para o loop
