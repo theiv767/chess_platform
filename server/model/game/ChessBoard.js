@@ -54,6 +54,7 @@ class ChessBoard {
     var test = this.getSelectedPiece().piece.checkMoviment(row, col, this);
 
     if (test == "false") {
+      test+="|"+this.getSelectedPiece().row+"-"+this.getSelectedPiece().col
       this.selectedPiece = null;
       return test;
 

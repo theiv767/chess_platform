@@ -1,16 +1,44 @@
 
+function startGlow(div) { 
+    div.style.backgroundColor = "#19A7CE";
+    div.style.boxShadow = "0 0 5px 1px #19A7CE";
+ 
+}
+
+function stopGlow(div) {
+  div.style.backgroundColor = "";
+  div.style.boxShadow = ""
+}
+
+
+
 // ======= CLIQUES DO TABULEIRO ==================================================
 function squareOnClick(col) {
     var id = col.id;
     axios.post('http://localhost:3000/chessBoard/squareOnClick', { id })
     .then(response => {
       console.log(response.data);
-
+        
+      //adicionar startGlow(col) para indicar visualmente a peça selecionada
+      
       if(response.data.canMov){
-        console.log("oi")
         var div = document.getElementById(response.data.idToMov)
         col.innerHTML = div.innerHTML
         div.innerHTML = ''
+        stopGlow(div)
+        stopGlow(col)
+
+      }else{
+        if(!response.data.selectedPiece){
+            stopGlow(col)
+            if(response.data.disSelect){
+                var div = document.getElementById(response.data.id)
+                console.log(response.data.id)
+                stopGlow(div)
+            }
+        }else{
+            startGlow(col)
+        }
       }
     })
     .catch(error => {

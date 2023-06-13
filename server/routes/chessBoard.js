@@ -30,10 +30,19 @@ router.post('/squareOnClick', (req, res) =>{
             chessBoard.setSelectedPiece(squareRow, squareCol);
             console.log("selectedPiece")
             console.log(chessBoard.getSelectedPiece().piece)
+            res.status(200).json({
+                canMov: false,
+                selectedPiece: true,
+                disSelect: false
+            })
+        }else{
+            res.status(200).json({
+                canMov: false,
+                selectedPiece: false,
+                disSelect: false
+            })
         }
-        res.status(200).json({
-            canMov: false
-        })
+        
 
     } else {
         moviment = chessBoard.movPiece(squareRow, squareCol);
@@ -41,7 +50,10 @@ router.post('/squareOnClick', (req, res) =>{
         moviment = moviment.split("|")[0]
         if(moviment == "false"){
             res.status(200).json({
-                canMov: false
+                canMov: false,
+                selectedPiece: false,
+                disSelect: true,
+                id: selectedPieceId
             })
         }else{
             res.status(200).json({
