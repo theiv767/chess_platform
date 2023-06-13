@@ -33,30 +33,52 @@
             <input type="text" name="Password" id="Password" placeholder="Digite sua Senha">
             <div class="underline"></div>
           </div>
-
-          <button id="close-modal" class="btnEntrar">Entrar</button>
         </form>
 
         <div class="footer">
-          <span>Outros</span>
+          <button type="submit" id="close-modal" onclick="logar()" class="btnEntrar">Entrar</button>
           <div class="social-fields">
-            <div class="social-field Google">
-              <a href="">
-                <i class="fa-brands fa-google"></i>
-                Entrar com Google
-              </a>
-            </div>
-            <div class="social-field Twitter">
-              <a href="#">
-                <i class="fa-brands fa-twitter"></i>
-                Entrar com Twitter
-              </a>
-            </div>
             <div class="sign-up">
-              <a href="#">
+              <u onclick=registroModal()>
                 Não possui conta?
+              </u>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
 
-              </a>
+  <div class="janela-modal-registro" id="janela-modal-registro">
+    <div id="modal">
+      <main class="container">
+        <h2>Registrar</h2>
+        <form action="">
+          <div class="input-field">
+            <input type="text" name="Username" id="Username" placeholder="Digite seu Usuário">
+            <div class="underline"></div>
+          </div>
+          <div class="input-field">
+            <input type="text" name="Email" id="Email" placeholder="Digite seu Email">
+            <div class="underline"></div>
+          </div>
+          <div class="input-field">
+            <input type="text" name="Password" id="Password" placeholder="Digite sua Senha">
+            <div class="underline"></div>
+          </div>
+          <div class="input-field">
+            <input type="text" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirme sua senha">
+            <div class="underline"></div>
+          </div>
+        </form>
+
+        <div class="footer">
+          <button type="submit" id="close-modal" onclick="registrar()" class="btnRegistrar">Registrar</button>
+          <div class="social-fields">
+            <div class="sign-up">
+              <u onclick=loginModal()>
+                já possui conta?
+              </u>
             </div>
           </div>
         </div>
