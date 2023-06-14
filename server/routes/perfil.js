@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const viewDirename = "C:/Users/davib/workSpace/github/chess_platform/view"
+const viewDirename = "view/pages/"
 
 
 router.get('/', (req, res, next) => {
-    res.status(200).sendFile(viewDirename+"/pages/perfil.html")
+    res.status(200).sendFile(viewDirename+"perfil.html", { root: __dirname+"../../../" })
 })
 
 module.exports = router;
