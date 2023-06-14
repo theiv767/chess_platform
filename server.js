@@ -23,8 +23,8 @@ app.get('/', (req, res) => {
 });
 
 
-const chessBoardRouter = require('./server/routes/chessBoard')
-app.use('/chessBoard', chessBoardRouter);
+const chessBoardRouter = require('./server/routes/jogar')
+app.use('/jogar', chessBoardRouter);
 
 const perfilRouter = require('./server/routes/perfil')
 app.use('/perfil', perfilRouter);
@@ -32,7 +32,7 @@ app.use('/perfil', perfilRouter);
 const configRouter = require('./server/routes/config')
 app.use('/config', configRouter);
 
-const userRouter = require('./server/routes/userControl');
+const userRouter = require('./server/routes/users');
 app.use('/users', userRouter);
 
 

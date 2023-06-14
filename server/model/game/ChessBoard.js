@@ -115,6 +115,22 @@ class ChessBoard {
     return this.turn;
   }
 
+  getActivePieces(){
+    var size =0;
+    var activePieces = [];
+    for(let rows=0; rows<8; rows++){
+      for(let cols=0; cols<8; cols++){
+        let currentPiece = this.getPiece(rows, cols);
+        if( currentPiece !=null){
+          activePieces[size] = currentPiece;
+          size++;
+        }
+      }
+    }
+    return activePieces;
+
+  }
+
   setPieces(pieces) {
     this.pieces = pieces;
   }

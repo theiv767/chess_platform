@@ -3,8 +3,9 @@ const ChessBoard = require('../ChessBoard');
 
 class Bishop extends Piece {
 
-    constructor(color, row, col ) {
+    constructor(color, row, col) {
         super(color, row, col );
+        this.type = "Bishop";
     }
 
     checkMoviment(row, col, chessBoard){

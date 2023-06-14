@@ -12,6 +12,12 @@ router.get('/', (req, res, next) => {
     
 })
 
+router.get('/chessBoard', (req, res, next) => {
+    var activePieces = chessBoard.getActivePieces()
+    res.status(200).json(activePieces);
+
+})
+
 
 router.post('/squareOnClick', (req, res) =>{
     // ARRUMAR AQUI, DANDO ERRO !!!!!!!!!!!!!!!!!!!!!!!!!!!

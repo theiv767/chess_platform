@@ -5,6 +5,8 @@ class Rook extends Piece {
     constructor(color, row, col ) {
         super(color, row, col );
         this.canCastle = true;
+        this.type = "Rook"
+        
     }
 
     checkMoviment(row, col, chessBoard) {

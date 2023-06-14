@@ -4,6 +4,7 @@ class Knight extends Piece {
 
     constructor(color, row, col ) {
         super(color, row, col );
+        this.type = "Knight";
     }
 
     checkMoviment(row, col, chessBoard) {
