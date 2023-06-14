@@ -34,20 +34,22 @@ function logar() {
     let inputUserName = document.getElementById("UsernameLogin")
     let inputPassword = document.getElementById("PasswordLogin")
     let alert = document.getElementById("msgLog")
-    console.log(inputUserName)
-    console.log(inputPassword)
-    console.log(alert)
 
     let user = {
         email: inputUserName.value,
         password: inputPassword.value
     }
-    console.log(user)
 
+    // LOGIN ============================
     axios.post('http://localhost:3000/users/auth/login/', user)
         .then(response => {
-            console.log(response.data.message)
-            console.log(alert)
+           console.log("msg: "+ response.data.message)
+            
+            localStorage.setItem('auth_chess_user', response.data.token);
+            const tokenArmazenado = localStorage.getItem('auth_chess_user');
+            console.log("token: "+tokenArmazenado)
+            
+
             if (response.data.message) {
                 alert.innerHTML = `
                 <div class="alert alert-success d-flex align-items-center" role="alert">

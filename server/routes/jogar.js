@@ -7,6 +7,7 @@ const chessBoard = new ChessBoard();
 
 
 router.get('/', (req, res, next) => {
+    
     res.status(200).sendFile(viewDirename+"chessBoard.html", { root: __dirname+"../../../" })
     
 })

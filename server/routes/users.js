@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const bcrypt = require('bcrypt')
-
+const jwt = require('jsonwebtoken')
 const { json } = require('express')
 const Person = require('../model/db/User')
+
 
 //POST
 //Registrar
@@ -82,11 +83,22 @@ router.post('/auth/login/', async (req, res, next) => {
 
     if (!checkPassowrd) {
         return res.status(201).json({ error: 'Senha inválida!' })
-    } else {
-        return res.status(200).json({ message: 'Login efetuado com sucesso' })
     }
 
 
+    try{
+        const expiracao = '1h'
+        const secret = process.env.SECRET
+        const token = jwt.sign(
+        {
+            id: user._id
+        }, secret)
+
+        return res.status(200).json({ message: 'Login efetuado com sucesso', token })
+    }catch(e){
+
+    }
+        // Logar ...
 })
 
 //GET
@@ -102,14 +114,15 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/:id', async (req, res) => {
+// ROTA PRIVADA
+router.get('/:id', checkToken ,async (req, res) => {
     const id = req.params.id
 
     try {
-        const person = await Person.findOne({ _id: id })
+        const person = await Person.findOne({ _id: id }, '-password')
 
         if (!person) {
-            res.status(422).json({ message: 'Usuário não encontrado!' })
+            res.status(404).json({ message: 'Usuário não encontrado!' })
             return
         }
 
@@ -118,6 +131,24 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ error: error })
     }
 })
+
+function checkToken(req, res, next){
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+
+    if(!token){
+        res.status(401).send({error: "Acesso negado !"});
+        return
+    }
+
+    try{
+        
+
+    }catch(e){
+
+    }
+}
+
 
 //PUT
 router.patch('/:id', async (req, res) => {
