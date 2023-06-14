@@ -93,8 +93,13 @@ router.post('/auth/login/', async (req, res, next) => {
         {
             id: user._id
         }, secret)
-
-        return res.status(200).json({ message: 'Login efetuado com sucesso', token })
+        let id = user._id;
+        return res.status(200).json(
+        { 
+            message: 'Login efetuado com sucesso', 
+            id,
+            token 
+        })
     }catch(e){
 
     }
@@ -122,30 +127,35 @@ router.get('/:id', checkToken ,async (req, res) => {
         const person = await Person.findOne({ _id: id }, '-password')
 
         if (!person) {
-            res.status(404).json({ message: 'Usuário não encontrado!' })
+            res.status(404).json({ error: 'Usuário não encontrado!' })
             return
         }
 
         res.status(200).json(person)
     } catch (error) {
-        res.status(500).json({ error: error })
+        console.log(error)
+        res.status(500).json({"error": "falha de servidor"})
     }
 })
+
 
 function checkToken(req, res, next){
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
 
     if(!token){
-        res.status(401).send({error: "Acesso negado !"});
+        res.status(401).json({"error": "Acesso negado!"});
         return
     }
 
     try{
-        
+        const secret = process.env.SECRET
+        jwt.verify(token, secret)
+        next()
 
     }catch(e){
-
+        console.log(e)
+        res.status(400).json({"error": "Token inválido!"})
     }
 }
 
@@ -173,7 +183,8 @@ router.patch('/:id', async (req, res) => {
         res.status(200).json(person)
 
     } catch (error) {
-        res.status(500).json({ error: error })
+        console.log(error)
+        res.status(500).json({"error": "erro ainda não catalogado!"})
     }
 })
 

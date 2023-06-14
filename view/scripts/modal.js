@@ -44,11 +44,9 @@ function logar() {
     axios.post('http://localhost:3000/users/auth/login/', user)
         .then(response => {
            console.log("msg: "+ response.data.message)
-            
+
             localStorage.setItem('auth_chess_user', response.data.token);
-            const tokenArmazenado = localStorage.getItem('auth_chess_user');
-            console.log("token: "+tokenArmazenado)
-            
+            localStorage.setItem('id_user', response.data.id)
 
             if (response.data.message) {
                 alert.innerHTML = `
