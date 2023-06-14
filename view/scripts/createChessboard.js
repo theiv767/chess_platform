@@ -99,6 +99,7 @@ axios.get('http://localhost:3000/jogar/chessBoard')
             let currentCol = piece._col
             
             let imgPiece = document.createElement('img');
+            imgPiece.style.zIndex = '5'
             imgPiece.classList.add('imgPiece')
             switch (piece.type) {
                 case "Pawn":

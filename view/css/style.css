@@ -419,10 +419,52 @@ main{
 }
 
 #buscar-partida {
-  display: flex;
+  display: none;
 }
-
 
 #buscar-partida.fechar {
   display: none;
+}
+
+#em-partida h1 {
+  user-select: none;
+}
+#em-partida img {
+  user-select: none;
+}
+
+#janela-partida img {
+  margin-top: 15px;
+  width: 70px;
+  margin-left: 140px;
+}
+
+#janela-partida h2 {
+  margin-top: 10px;
+  margin-left: 155px;
+  margin-bottom: -0px;
+}
+
+#em-partida {
+  display: flex;
+}
+
+#modal-partida {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+main.container-result {
+  color: white;
+  display: flex;
+  align-items: center;
+  background-repeat: repeat;
+  background: #2d3039;
+  width: 350px;
+  height: 200px;
+  padding: 2rem;
+  box-shadow: 5px 5px 15px rgba(138, 137, 137, 0.2);
+  border-radius: 8px;
 }
