@@ -419,7 +419,7 @@ main{
 }
 
 #buscar-partida {
-  display: none;
+  display: flex;
 }
 
 #buscar-partida.fechar {
@@ -446,11 +446,15 @@ main{
 }
 
 #em-partida {
-  display: flex;
+  display: none;
+}
+
+#modal-partida.fechar {
+  display: none;
 }
 
 #modal-partida {
-  display: none;
+  display: flex;
   position: fixed;
   left: 50%;
   top: 50%;
