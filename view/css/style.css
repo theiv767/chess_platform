@@ -351,9 +351,11 @@ form input[type="submit"] {
 
 }
 
-
-
-
 .table{
   border-color: var(--light-dark) !important;
+}
+
+
+main{
+   height: 80vh;
 }
