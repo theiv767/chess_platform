@@ -1,21 +1,27 @@
 function animateScrollToTop(duration) {
     const start = window.pageYOffset;
     const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-  
+
     function scrollStep(timestamp) {
-      const currentTime = timestamp || new Date().getTime();
-      const elapsed = currentTime - startTime;
-      const scrollAmount = Math.max(start - (elapsed / duration * start), 0);
-  
-      window.scrollTo(0, scrollAmount);
-  
-      if (elapsed < duration) {
-        window.requestAnimationFrame(scrollStep);
-      }
+        const currentTime = timestamp || new Date().getTime();
+        const elapsed = currentTime - startTime;
+        const scrollAmount = Math.max(start - (elapsed / duration * start), 0);
+
+        window.scrollTo(0, scrollAmount);
+
+        if (elapsed < duration) {
+            window.requestAnimationFrame(scrollStep);
+        }
     }
-  
+
     window.requestAnimationFrame(scrollStep);
-  }
+}
+
+function logOut() {
+    localStorage.clear()
+    console.log("deslogado")
+
+}
 
 
 
@@ -43,12 +49,32 @@ function logar() {
     // LOGIN ============================
     axios.post('http://localhost:3000/users/auth/login/', user)
         .then(response => {
-           console.log("msg: "+ response.data.message)
+            console.log("msg: " + response.data.message)
 
             localStorage.setItem('auth_chess_user', response.data.token);
             localStorage.setItem('id_user', response.data.id)
 
             if (response.data.message) {
+                let perfilBtn = document.getElementById("perfilDropdown")
+                perfilBtn.innerHTML = `
+                    <button style="background-color: var(--bg-nav-dark); border: 0px;" class="btn btn-secondary dropdown-toggle"
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../assets/img/perfil/perfilGTI.jpg" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item link-navigation" href="perfil">Perfil</a></li>
+                        <li><a class="dropdown-item link-navigation" href="config">Configurações</a></li>
+                        <li id="liLogout" style="padding-right: 2px; padding-left: 2px;">
+                        <a id="logout" class="dropdown-item" href="/" style="background-color: rgba(255, 74, 74, 0.199);">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i></i> Sair
+                        </a>
+                        </li>
+                    </ul>
+                    `
+                let btnLogout = document.getElementById("logout")
+                if (btnLogout) {
+                    btnLogout.onclick = logOut
+                }
                 alert.innerHTML = `
                 <div class="alert alert-success d-flex align-items-center" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
@@ -59,7 +85,9 @@ function logar() {
                         `+ response.data.message + `
                     </div>  
                 </div>`
-    
+
+
+
             } else {
                 alert.innerHTML = `
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -85,8 +113,8 @@ function logar() {
                     <div>`+ error + `
                     </div>
                 </div>
-                 `    
-                 animateScrollToTop(500);
+                 `
+            animateScrollToTop(500);
         });
 
 }

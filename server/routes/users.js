@@ -86,24 +86,25 @@ router.post('/auth/login/', async (req, res, next) => {
     }
 
 
-    try{
-        const expiracao = '1h'
+    try {
+        // GERAR TOKEN
+        const expiracao = '1m'
         const secret = process.env.SECRET
         const token = jwt.sign(
-        {
-            id: user._id
-        }, secret)
+            {
+                id: user._id
+            }, secret)
         let id = user._id;
         return res.status(200).json(
-        { 
-            message: 'Login efetuado com sucesso', 
-            id,
-            token 
-        })
-    }catch(e){
+            {
+                message: 'Login efetuado com sucesso',
+                id,
+                token
+            })
+    } catch (e) {
 
     }
-        // Logar ...
+    // Logar ...
 })
 
 //GET
@@ -120,7 +121,7 @@ router.get('/', async (req, res) => {
 
 
 // ROTA PRIVADA
-router.get('/:id', checkToken ,async (req, res) => {
+router.get('/:id', checkToken, async (req, res) => {
     const id = req.params.id
 
     try {
@@ -134,28 +135,28 @@ router.get('/:id', checkToken ,async (req, res) => {
         res.status(200).json(person)
     } catch (error) {
         console.log(error)
-        res.status(500).json({"error": "falha de servidor"})
+        res.status(500).json({ "error": "falha de servidor" })
     }
 })
 
 
-function checkToken(req, res, next){
+function checkToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
 
-    if(!token){
-        res.status(401).json({"error": "Acesso negado!"});
+    if (!token) {
+        res.status(401).json({ "error": "Acesso negado!" });
         return
     }
 
-    try{
+    try {
         const secret = process.env.SECRET
         jwt.verify(token, secret)
         next()
 
-    }catch(e){
+    } catch (e) {
         console.log(e)
-        res.status(400).json({"error": "Token inválido!"})
+        res.status(400).json({ "error": "Token inválido!" })
     }
 }
 
@@ -184,7 +185,7 @@ router.patch('/:id', async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(500).json({"error": "erro ainda não catalogado!"})
+        res.status(500).json({ "error": "erro ainda não catalogado!" })
     }
 })
 

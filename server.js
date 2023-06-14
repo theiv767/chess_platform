@@ -18,7 +18,7 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 // Define as rotas do servidor ==========================================
 // Rota principal
-app.get('/', (req, res) => {
+app.get('/', (res) => {
   res.sendFile(__dirname + '/view', 'index.html');
 });
 
@@ -44,10 +44,10 @@ const banco_senha = encodeURIComponent('dbbvb327904')
 
 mongoose.connect(
   process.env.URL_DB
-  ).then(() =>{
-      console.log("db connection success!!")
-      app.listen(port, () => {
-        console.log(`Servidor rodando em http://localhost:${port}`);
-      });
-  })
+).then(() => {
+  console.log("db connection success!!")
+  app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
+  });
+})
   .catch((err) => console.log(err))
