@@ -13,7 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="../css/scrollBar.css" />
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
 
   <style>
     .square {
@@ -33,12 +35,12 @@
       background-color: #24272e;
     }
 
-    #chessBoard-container{
+    #chessBoard-container {
       width: 416px !important;
       height: 416px !important;
     }
 
-    .imgPiece{
+    .imgPiece {
       width: 130%;
       height: 130%;
       object-fit: contain;
@@ -46,32 +48,94 @@
     }
   </style>
 </head>
-  
+
 
 <body class="bg-dark-bg">
-  
-  <nav id="navbar-container"></nav>
 
-  <div class="container-fluid">
-    <div class="row m-4">
-      <div class="col-6">
-        <div id="chessBoard-container" class="container text-center" style="min-width: 200px; min-height: 200px;">
+  <nav id="navbar-container"></nav>
+  <main>
+
+    <div class="container-fluid">
+      <div class="row m-4">
+        <div class="col-6">
+          <div id="chessBoard-container" class="container text-center"
+            style="margin-top: 15px; min-width: 200px; min-height: 200px;">
+          </div>
+        </div>
+
+        <div class="col">
+          <div id="buscando-partida"
+              style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+              <div id="janela">
+                <div
+                  style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+                  <div>
+                    <h1 style="font-size: 35px; margin-left: 25px;">Procurando Aversário</h1>
+                  </div>
+                  <div
+                    style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
+                    <div id="janela-buscando">
+                      <div id="jogo-modal-buscando">
+                        <div><img id="black" src="../assets/34338d26023e5515f6cc8969aa027bca_w200.gif"></div>
+                        <div>
+                          <h2>VS</h2>
+                        </div>
+                        <div><img id="white" src="../assets/img/icons/pieces/pawnwhite.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
+                    <div
+                      style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
+                      <div>
+                        <h2 onclick="cancelarBusca()" style="margin-left: 25px; font-size: 28px;">Cancelar Busca</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          <div id="buscar-partida" style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+            <div id="janela">
+              <div
+                style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+                <div>
+                  <h1 style="font-size: 35px; margin-left: 35px;">Encontrar Adversário</h1>
+                </div>
+                <div
+                  style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
+                  <div id="janela-buscar">
+                    <div id="jogo-modal-buscar">
+                      <div><img src="../assets/img/icons/blitz.png"></div>
+                      <div><img src="../assets/img/icons/bullet.png"></div>
+                      <div><img src="../assets/img/icons/rapid.png"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
+                  <div
+                    style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
+                    <div>
+                      <h2 onclick="buscar()" style="margin-left: 80px; font-size: 28px;">Buscar</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="col">
-        <div style="
-              margin-left: 8vw;
-              width: 450px;
-              height: 450px;
-              background-color: #24272e;
-            "></div>
-      </div>
-    </div>
-  </div>
+  </main>
 
 
   <!-- =====Scripts================================================= -->
+  <script src="../scripts/chessboardModals.js"></script>
   <script type="module" src="../scripts/createChessboard.js"></script>
 
   <footer id="footer-container"></footer>
