@@ -403,6 +403,14 @@ main{
   margin-left: 140px;
 }
 
+#buscar-partida h1 {
+  user-select: none;
+}
+
+#buscando-partida h1 {
+  user-select: none;
+}
+
 #buscando-partida {
   display: none;
 }
