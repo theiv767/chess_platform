@@ -51,10 +51,10 @@ function logar() {
         .then(response => {
             console.log("msg: " + response.data.message)
 
-            localStorage.setItem('auth_chess_user', response.data.token);
-            localStorage.setItem('id_user', response.data.id)
-
+            
             if (response.data.message) {
+                localStorage.setItem('auth_chess_user', response.data.token);
+                localStorage.setItem('id_user', response.data.id)
                 let perfilBtn = document.getElementById("perfilDropdown")
                 let linkPerfil = document.getElementById("perfil-link").href = 'perfil'
                 let linkChessBoard = document.getElementById("chessBoard-link").href = 'jogar'
