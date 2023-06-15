@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const viewDirename = "view/pages/"
-
+const jwt = require('jsonwebtoken')
 const ChessBoard = require('../model/game/ChessBoard')
 const chessBoard = new ChessBoard();
 
 
 router.get('/', (req, res, next) => {
-    
     res.status(200).sendFile(viewDirename+"chessBoard.html", { root: __dirname+"../../../" })
     
 })
+
+
 
 router.get('/chessBoard', (req, res, next) => {
     var activePieces = chessBoard.getActivePieces()
@@ -72,6 +73,24 @@ router.post('/squareOnClick', (req, res) =>{
     }
 
 })
+
+router.delete('/chessBoard', (req, res)=>{
+    const {row, col} = req.body;
+    chessBoard.deletePiece(row, col)
+    var activePieces = chessBoard.getActivePieces()
+    res.status(200).json(activePieces);
+})
+
+router.put('/chessBoard', (req, res)=>{
+    const {_row, _col, piece} = req.body;
+    chessBoard.setPiece(_row, _col, piece)
+    
+    var activePieces = chessBoard.getActivePieces()
+    res.status(200).json(activePieces);
+
+})
+
+
 
 
 module.exports = router;

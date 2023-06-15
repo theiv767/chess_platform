@@ -11,8 +11,18 @@ const config = {
 
 axios.get('http://localhost:3000/users/'+idArmazenado, config)
 .then(response =>{
+    const nickname = document.getElementById("nickname")
+    const ratingRapid = document.getElementById("ratingRapid")
+    const ratingBlitz = document.getElementById("ratingBlitz")
+    const ratingBullet = document.getElementById("ratingBullet")
 
-    console.log(response.data)
+    const user = response.data
+
+    nickname.innerHTML = `<b>`+user.username+`</b>`
+    ratingRapid.innerHTML = `Rapid <br/>`+user.ratingrapid
+    ratingBlitz.innerHTML = `Blitz <br/>`+user.ratingblitz
+    ratingBullet.innerHTML = `Bullet <br/>`+user.ratingbullet
+    console.log(user)
     
 }).catch(e => {
     console.error(e)

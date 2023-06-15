@@ -47,6 +47,9 @@ router.post('/auth/register/', async (req, res) => {
         username,
         email,
         password: passwordHash,
+        ratingrapid: 1000,
+        ratingblitz: 1000,
+        ratingbullet: 1000
     }
 
     try {
@@ -84,7 +87,6 @@ router.post('/auth/login/', async (req, res, next) => {
     if (!checkPassowrd) {
         return res.status(201).json({ error: 'Senha inválida!' })
     }
-
 
     try {
         // GERAR TOKEN

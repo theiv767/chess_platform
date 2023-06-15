@@ -1,8 +1,10 @@
-// funciona como um GOF MEMENTO
+const mongoose = require('mongoose')
 
-class GameMemento {
+const GameMemento = mongoose.model('GameMemento',{
+    players: String,
+    date: String,
+    result: Boolean
 
-
-}
+})
 
 module.exports = GameMemento

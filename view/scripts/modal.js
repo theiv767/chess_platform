@@ -56,6 +56,9 @@ function logar() {
 
             if (response.data.message) {
                 let perfilBtn = document.getElementById("perfilDropdown")
+                let linkPerfil = document.getElementById("perfil-link").href = 'perfil'
+                let linkChessBoard = document.getElementById("chessBoard-link").href = 'jogar'
+                let linkConfig = document.getElementById("config-link").href = 'config'
                 perfilBtn.innerHTML = `
                     <button style="background-color: var(--bg-nav-dark); border: 0px;" class="btn btn-secondary dropdown-toggle"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false">

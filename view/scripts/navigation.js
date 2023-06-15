@@ -1,5 +1,3 @@
-// const { default: axios } = require("axios");
-
 var nav = document.currentScript.dataset.nav;
 var container = document.currentScript.dataset.navcontainer;
 const current = document.currentScript.dataset.current;
@@ -11,6 +9,7 @@ function logOut() {
 }
 
 
+
 axios.get(nav)
   .then((response) => {
     document.getElementById(container).innerHTML = response.data;
@@ -20,7 +19,9 @@ axios.get(nav)
 
       let perfilBtn = document.getElementById("perfilDropdown")
       console.log(perfilBtn)
-
+      let linkPerfil = document.getElementById("perfil-link").href = 'perfil'
+      let linkChessBoard = document.getElementById("chessBoard-link").href = 'jogar'
+      let linkConfig = document.getElementById("config-link").href = 'config'
 
       let btnLogout = document.getElementById("logout")
       if (btnLogout) {
@@ -30,7 +31,12 @@ axios.get(nav)
     } else {
       let perfilBtn = document.getElementById("perfilDropdown")
       perfilBtn.innerHTML = ''
+      let linkPerfil = document.getElementById("perfil-link").href = ''
+      let linkChessBoard = document.getElementById("chessBoard-link").href = ''
+      let linkConfig = document.getElementById("config-link").href = ''
     }
+    
+
 
     if (!(current == 'home')) {
       const currentLink = document.getElementById(current + '-link');

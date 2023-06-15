@@ -47,6 +47,8 @@
       z-index: 10;
     }
   </style>
+
+  <script type="module" src="../scripts/pages/chessBoard.js" defer></script>
 </head>
 
 
@@ -72,20 +74,29 @@
       </div>
     </div>
 
-    <div style="margin-top: -20px; user-select: none;" class="container-fluid">
+
+
+<!-- ======== CHESS BOARD   ====================================================================================== -->
+<!-- ======== CHESS BOARD   ====================================================================================== -->
+<!-- ======== CHESS BOARD   ====================================================================================== -->
+<!-- ======== CHESS BOARD   ====================================================================================== -->
+
+<div style="margin-top: -20px; user-select: none;" class="container-fluid">
       <div class="row m-4">
         <div class="col-6">
-          <div style="margin-bottom: -10px; display: flex;"><a id="username-adversario" style="font-size: 25px;margin-left: 150px; color: white;">Adversário</a>
-            <a id="username-adversario" style="font-size: 30px; margin-left: 300px; color: white;">00</a>
-            <a id="username-adversario" style="font-size: 30px; color: white;">:</a>
-            <a id="username-adversario" style="font-size: 30px; color: white;">00</a></div>
+          <div class="container-fluid  text-center">
+            <a id="username-adversario" style="font-size: 25px; margin-left: 10px ;margin-right: 200px; color: white;">Adversário</a>
+            <a class="text-center" id="minutos-adversario" style="font-size: 30px; color: white;">00</a>
+            <a class="text-center" style="font-size: 30px; color: white;">:</a>
+            <a class="text-center" id="segundos-adversario" style="font-size: 30px; color: white;">00</a></div>
           <div id="chessBoard-container" class="container text-center"
             style="margin-top: 15px; min-width: 200px; min-height: 200px;">
           </div>
-          <div style="margin-top: 10px; display: flex;"><a id="username-jogador" style="font-size: 25px; margin-left: 150px; color: white;">Jogador</a>
-            <a id="username-adversario" style="font-size: 30px; margin-left: 300px; color: white;">00</a>
-            <a id="username-adversario" style="font-size: 30px; color: white;">:</a>
-            <a id="username-adversario" style="font-size: 30px; color: white;">00</a></div>
+          <div class="container-fluid text-center">
+            <a id="username-jogador" style="font-size: 25px; margin-left: 10px ;margin-right: 230px; color: white;">Jogador</a>
+            <a class="text-center" id="minutos-jogador" style="font-size: 30px; color: white;">00</a>
+            <a class="text-center" style="font-size: 30px; color: white;">:</a>
+            <a class="text-center" id="segundos-jogador" style="font-size: 30px; color: white;">00</a></div>
         </div>
         
         <!-- <div style="margin-right: -800px;" class="col">

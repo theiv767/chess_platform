@@ -107,6 +107,14 @@ class ChessBoard {
     return this.pieces[row][col];
   }
 
+  deletePiece(row, col){
+    this.pieces[row][col] = null;
+  }
+
+  setPiece(row, col, piece){
+    this.pieces[row][col] = piece;
+  }
+
   getSelectedPiece() {
     return this.selectedPiece;
   }
