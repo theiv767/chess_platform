@@ -1,3 +1,57 @@
+var timeoutId; // Variável para armazenar o ID do timeout
+var currentMinutos = "minutos-jogador"
+var currentSegundos = "segundos-jogador"
+
+
+// CREATE CONTAGEM DE TEMPO REGRESSIVA
+function contagemRegressiva(idMinutos, idSegundos) {
+    var minutosElemento = document.getElementById(idMinutos);
+    var segundosElemento = document.getElementById(idSegundos);
+  
+    var minutos = parseInt(minutosElemento.innerText);
+    var segundos = parseInt(segundosElemento.innerText);
+  
+    if (segundos > 0) {
+      segundos--;
+    } else {
+      if (minutos > 0) {
+        minutos--;
+        segundos = 59;
+      } else {
+        // A contagem regressiva terminou
+        return;
+      }
+    }
+  
+    minutosElemento.innerText = minutos.toString().padStart(2, "0");
+    segundosElemento.innerText = segundos.toString().padStart(2, "0");
+  
+    // Chamar a função novamente após 1 segundo
+    timeoutId = setTimeout(function() {
+      contagemRegressiva(idMinutos, idSegundos);
+    }, 1000);
+}
+  
+  // Interromper a contagem regressiva
+function interromperContagemRegressiva() {
+   clearTimeout(timeoutId);
+}
+
+document.getElementById("minutos-jogador").innerText = "03";
+document.getElementById("segundos-jogador").innerText = "00";
+document.getElementById("minutos-adversario").innerText = "03";
+document.getElementById("segundos-adversario").innerText = "00";
+
+var buscarBtn = document.getElementById("modalBuscarBtn")
+
+//iniciando contagem regressiva
+buscarBtn.onclick = function(){
+    contagemRegressiva(currentMinutos, currentSegundos);
+
+}
+
+
+
 
 function startGlow(div) { 
     div.style.backgroundColor = "#19A7CE";
@@ -25,6 +79,20 @@ function squareOnClick(col) {
         div.innerHTML = ''
         stopGlow(div)
         stopGlow(col)
+        interromperContagemRegressiva()
+        if(currentMinutos == "minutos-jogador"){
+
+            currentMinutos = "minutos-adversario"
+            currentSegundos = "segundos-adversario"
+            contagemRegressiva(currentMinutos, currentSegundos);    
+        }else{
+
+            currentMinutos = "minutos-jogador"
+            currentSegundos = "segundos-jogador"
+            contagemRegressiva(currentMinutos, currentSegundos);
+        }
+        
+
 
       }else{
         if(!response.data.selectedPiece){
