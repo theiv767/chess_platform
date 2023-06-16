@@ -9,10 +9,14 @@
   <title>Chess</title>
 
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="../css/scrollBar.css">
+  <link rel="stylesheet" href="../css/picturesInput.css">
+  <script src="../scripts/pages/config.js" defer></script>
 </head>
 
 
@@ -22,53 +26,51 @@
 
   <nav id="navbar-container"></nav>
 
-  <main>
-    <div class="container">
-      <div class="row">
-        <label for="exampleFormControlInput1" class="form-label text-white mt-5">Alterar Email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="emailAtual@gmail.com">
-  
-        <label for="exampleFormControlInput1" class="form-label text-white mt-5">Alterar Senha</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Senha atual ...">
-  
-        <div class="dropdown mt-5">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Alterar idioma
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Português</a></li>
-            <li><a class="dropdown-item" href="#">Inglês</a></li>
-            <li><a class="dropdown-item" href="#">Espanhol</a></li>
-          </ul>
+  <div class="container">
+    <div class="row">
+      <label for="exampleFormControlInput1" class="form-label text-white mt-5">Alterar Email</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="emailAtual@gmail.com">
+
+      <label for="exampleFormControlInput1" class="form-label text-white mt-5">Alterar Senha</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Senha atual ...">
+
+      <div class="mt-5">
+        <button id="alterImg" class="btn btn-secondary" type="button" aria-expanded="false">
+          Alterar imagem de perfil <img src="../assets/img/icons/picturesUpload.png" width="30" class="ml-5">
+        </button>
+
+        <div id="pictureWrapper">
+
         </div>
       </div>
     </div>
-    </div>
-  
-    <div class="container-fluid">
-      <hr class="border border-light border-3 opacity-75 mt-5">
-    </div>
-  
-    <div class="container">
-      <div class="row">
-        <button class="btn btn-lg btn-success btn-block mt-5">Confirmar alterações</button>
-      </div>
-    </div>
+  </div>
+  </div>
 
-  </main>
+
+
+  <div class="container-fluid">
+    <hr class="border border-light border-3 opacity-75 mt-5">
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <button class="btn btn-lg btn-success btn-block mt-5">Confirmar alterações</button>
+    </div>
+  </div>
+
+
 
   <footer id="footer-container"></footer>
 
-
-  
-
-  <script defer src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script defer src="../scripts/navigation.js" data-nav="../components/navbar.html" data-navcontainer="navbar-container"
     data-current="config"></script>
 
   <script defer src="../scripts/load-html.js" data-load="../components/footer.html" data-element="footer-container">
   </script>
+
+  <script defer src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 

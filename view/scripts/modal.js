@@ -62,7 +62,7 @@ function logar() {
                 perfilBtn.innerHTML = `
                     <button style="background-color: var(--bg-nav-dark); border: 0px;" class="btn btn-secondary dropdown-toggle"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../assets/img/perfil/perfilGTI.jpg" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
+                        <img src="../assets/img/perfil/perfil.jpg" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item link-navigation" href="perfil">Perfil</a></li>

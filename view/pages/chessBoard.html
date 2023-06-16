@@ -54,52 +54,64 @@
 
 <body class="bg-dark-bg">
   <nav id="navbar-container"></nav>
-  <main>
-    
-    <div class="janela-modal-partida" id="janela-modal-partida">
-      <div id="modal-partida">
-        <main style="user-select: none;" class="container-result">
-          <div> <div style=" margin-top: -100px; margin-left: -32px; width: 350px; height: 50px; background-color: #24272e; border-top-right-radius: 10px; border-top-left-radius: 10px;"></div> </div>
-          <div><h2 style=" margin-left: -250px; margin-top: -95px;">Resultado</h2></div>
 
-          <a style="margin-left: -205px; margin-top: -75px; font-size: 20px;">Vitória!</a>
-          <div><img style="user-select: none; width: 65px; margin-top: 40px; margin-left: -180px;" id="black" src="../assets/img/icons/pieces/pawndark.png"></div>
-          <div><img style="user-select: none; width: 65px; margin-top: 40px; margin-left: 60px;" id="black" src="../assets/img/icons/pieces/pawnwhite.png"></div>
-          <div><a id="resultado-white" style="margin-left: -80px;">0</a></div>
-          <div><a id="resultado-black" style="margin-left: -240px;">0</a></div>
-          <img style="user-select: none; width: 20px; margin-top: 20px; margin-left: -170px;" id="resultado-tipo-jogo" src="../assets/img/icons/blitz.png">
-          <a style="margin-left: -30px; margin-top: 100px;" id="resultado-rating">1800</a>
-          <a onclick="fecharResultado()" style="font-size: 20px; margin-top: 160px; margin-left: -45px;">Fechar</a>
-        </main>
-      </div>
-    </div>
-
-
-
-<!-- ======== CHESS BOARD   ====================================================================================== -->
-<!-- ======== CHESS BOARD   ====================================================================================== -->
-<!-- ======== CHESS BOARD   ====================================================================================== -->
-<!-- ======== CHESS BOARD   ====================================================================================== -->
-
-<div style="margin-top: -20px; user-select: none;" class="container-fluid">
-      <div class="row m-4">
-        <div class="col-6">
-          <div class="container-fluid  text-center">
-            <a id="username-adversario" style="font-size: 25px; margin-left: 10px ;margin-right: 200px; color: white;">Adversário</a>
-            <a class="text-center" id="minutos-adversario" style="font-size: 30px; color: white;">00</a>
-            <a class="text-center" style="font-size: 30px; color: white;">:</a>
-            <a class="text-center" id="segundos-adversario" style="font-size: 30px; color: white;">00</a></div>
-          <div id="chessBoard-container" class="container text-center"
-            style="margin-top: 15px; min-width: 200px; min-height: 200px;">
+  <div class="janela-modal-partida" id="janela-modal-partida">
+    <div id="modal-partida">
+      <main style="user-select: none;" class="container-result">
+        <div>
+          <div
+            style=" margin-top: -100px; margin-left: -32px; width: 350px; height: 50px; background-color: #24272e; border-top-right-radius: 10px; border-top-left-radius: 10px;">
           </div>
-          <div class="container-fluid text-center">
-            <a id="username-jogador" style="font-size: 25px; margin-left: 10px ;margin-right: 230px; color: white;">Jogador</a>
-            <a class="text-center" id="minutos-jogador" style="font-size: 30px; color: white;">00</a>
-            <a class="text-center" style="font-size: 30px; color: white;">:</a>
-            <a class="text-center" id="segundos-jogador" style="font-size: 30px; color: white;">00</a></div>
         </div>
-        
-        <!-- <div style="margin-right: -800px;" class="col">
+        <div>
+          <h2 style=" margin-left: -250px; margin-top: -95px;">Resultado</h2>
+        </div>
+
+        <a style="margin-left: -205px; margin-top: -75px; font-size: 20px;">Vitória!</a>
+        <div><img style="user-select: none; width: 65px; margin-top: 40px; margin-left: -180px;" id="black"
+            src="../assets/img/icons/pieces/pawndark.png"></div>
+        <div><img style="user-select: none; width: 65px; margin-top: 40px; margin-left: 60px;" id="black"
+            src="../assets/img/icons/pieces/pawnwhite.png"></div>
+        <div><a id="resultado-white" style="margin-left: -80px;">0</a></div>
+        <div><a id="resultado-black" style="margin-left: -240px;">0</a></div>
+        <img style="user-select: none; width: 20px; margin-top: 20px; margin-left: -170px;" id="resultado-tipo-jogo"
+          src="../assets/img/icons/blitz.png">
+        <a style="margin-left: -30px; margin-top: 100px;" id="resultado-rating">1800</a>
+        <a onclick="fecharResultado()" style="font-size: 20px; margin-top: 160px; margin-left: -45px;">Fechar</a>
+      </main>
+    </div>
+  </div>
+
+
+
+  <!-- ======== CHESS BOARD   ====================================================================================== -->
+  <!-- ======== CHESS BOARD   ====================================================================================== -->
+  <!-- ======== CHESS BOARD   ====================================================================================== -->
+  <!-- ======== CHESS BOARD   ====================================================================================== -->
+
+  <div style="margin-top: -20px; user-select: none;" class="container-fluid">
+    <div class="row m-4">
+      <div class="col-6">
+        <div class="container-fluid  text-center">
+          <a id="username-adversario"
+            style="font-size: 25px; margin-left: 10px ;margin-right: 200px; color: white;">Adversário</a>
+          <a class="text-center" id="minutos-adversario" style="font-size: 30px; color: white;">00</a>
+          <a class="text-center" style="font-size: 30px; color: white;">:</a>
+          <a class="text-center" id="segundos-adversario" style="font-size: 30px; color: white;">00</a>
+        </div>
+        <div id="chessBoard-container" class="container text-center"
+          style="margin-top: 15px; min-width: 200px; min-height: 200px;">
+        </div>
+        <div class="container-fluid text-center">
+          <a id="username-jogador"
+            style="font-size: 25px; margin-left: 10px ;margin-right: 230px; color: white;">Jogador</a>
+          <a class="text-center" id="minutos-jogador" style="font-size: 30px; color: white;">00</a>
+          <a class="text-center" style="font-size: 30px; color: white;">:</a>
+          <a class="text-center" id="segundos-jogador" style="font-size: 30px; color: white;">00</a>
+        </div>
+      </div>
+
+      <!-- <div style="margin-right: -800px;" class="col">
           <div><a id="minutes-black" style="margin-left: -140px; font-size: 40px; color: white; z-index: 11;">00</a>
             <a style="font-size: 40px; color: white; z-index: 11;">:</a>
             <a id="seconds-black" style="font-size: 40px; color: white; z-index: 11;">00</a>
@@ -115,111 +127,124 @@
           <div style="margin-left: -500px; margin-top: 420px;"><a id="username-jogador" style="font-size: 20px;">Jogador</a></div>
         </div> -->
 
-        <div class="col">
-          <div id="buscando-partida"
-              style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
-              <div id="janela">
-                <div
-                  style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+      <div class="col">
+        <div id="buscando-partida"
+          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+          <div id="janela">
+            <div
+              style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+              <div>
+                <h1 style="font-size: 35px; margin-left: 25px;">Procurando Aversário</h1>
+              </div>
+              <div
+                style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
+                <div id="janela-buscando">
+                  <div id="jogo-modal-buscando">
+                    <div><img id="black" src="../assets/34338d26023e5515f6cc8969aa027bca_w200.gif"></div>
+                    <div>
+                      <h2>VS</h2>
+                    </div>
+                    <div><img id="white" src="../assets/img/icons/pieces/pawnwhite.png"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
+                <div onclick="cancelarBusca()"
+                  style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
                   <div>
-                    <h1 style="font-size: 35px; margin-left: 25px;">Procurando Aversário</h1>
-                  </div>
-                  <div
-                    style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
-                    <div id="janela-buscando">
-                      <div id="jogo-modal-buscando">
-                        <div><img id="black" src="../assets/34338d26023e5515f6cc8969aa027bca_w200.gif"></div>
-                        <div>
-                          <h2>VS</h2>
-                        </div>
-                        <div><img id="white" src="../assets/img/icons/pieces/pawnwhite.png"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
-                    <div onclick="cancelarBusca()" style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
-                      <div>
-                        <h1 style="margin-left: 25px; font-size: 28px;">Cancelar Busca</h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          <div id="buscar-partida" style= "margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
-            <div id="janela">
-              <div
-                style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
-                <div>
-                  <h1 style="font-size: 35px; margin-left: 35px;">Encontrar Adversário</h1>
-                </div>
-                <div
-                  style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
-                  <div id="janela-buscar">
-                    <div id="jogo-modal-buscar">
-                      <div><img src="../assets/img/icons/blitz.png"></div>
-                      <div><img src="../assets/img/icons/bullet.png"></div>
-                      <div><img src="../assets/img/icons/rapid.png"></div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
-                  <div onclick="buscar()" style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
-                    <div id="modalBuscarBtn">
-                      <h1 style="margin-left: 80px; font-size: 28px;">Buscar</h1>
-                    </div>
+                    <h1 style="margin-left: 25px; font-size: 28px;">Cancelar Busca</h1>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div id="em-partida" style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
-            <div id="janela">
-              <div
-                style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
-                <div>
-                  <h1 style="font-size: 35px; margin-left: 110px;">Em Partida</h1>
-                </div>
-                <div
-                  style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
-                  <div id="janela-partida">
-                    <div id="jogo-modal-parida">
-                      <div><img id="black" src="../assets/img/icons/pieces/pawndark.png"></div>
-                        <div>
-                          <h2>VS</h2>
-                        </div>
-                        <div><img id="white" src="../assets/img/icons/pieces/pawnwhite.png"></div>
-                    </div>
-                  </div>
-                </div>
-                <div style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
-                  <div onclick="" style="margin-top: 0px; margin-left: 15px; width: 170px; padding-top: 5px; height: 50px; border-radius: 10px;"><div style="display: flex;">
-                    <img style=" margin-top: 5px; margin-left: 10px; width: 25px; height: 35px;" src="../assets/img/icons/giveup.png">
-                      <h1 style="margin-top: 2px; margin-left: 10px; font-size: 28px;">Desistir</h1></div>
-                  </div>
-                  <div onclick="" style="margin-top: -50px; margin-left: 210px; width: 170px; padding-top: 5px; height: 50px; border-radius: 10px;"><div style="display: flex;">
-                    <img style=" margin-left: 5px; width: 40px; height: 40px;" src="../assets/img/icons/draw.png">
-                    <h1 style="margin-top: 2px; margin-left: 5px; font-size: 28px;">Empate</h1></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
         </div>
+
+        <div id="buscar-partida"
+          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+          <div id="janela">
+            <div
+              style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+              <div>
+                <h1 style="font-size: 35px; margin-left: 35px;">Encontrar Adversário</h1>
+              </div>
+              <div
+                style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
+                <div id="janela-buscar">
+                  <div id="jogo-modal-buscar">
+                    <div><img src="../assets/img/icons/blitz.png"></div>
+                    <div><img src="../assets/img/icons/bullet.png"></div>
+                    <div><img src="../assets/img/icons/rapid.png"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
+                <div onclick="buscar()"
+                  style="margin-top: 0px; margin-left: 75px; width: 250px; padding-top: 5px; height: 50px; background-color: #9c4141; border-radius: 10px;">
+                  <div id="modalBuscarBtn">
+                    <h1 style="margin-left: 80px; font-size: 28px;">Buscar</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="em-partida"
+          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+          <div id="janela">
+            <div
+              style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
+              <div>
+                <h1 style="font-size: 35px; margin-left: 110px;">Em Partida</h1>
+              </div>
+              <div
+                style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
+                <div id="janela-partida">
+                  <div id="jogo-modal-parida">
+                    <div><img id="black" src="../assets/img/icons/pieces/pawndark.png"></div>
+                    <div>
+                      <h2>VS</h2>
+                    </div>
+                    <div><img id="white" src="../assets/img/icons/pieces/pawnwhite.png"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="margin-top: 26px; width: 400px; height: 70px; padding-top: 10px; background-color: #2d3039; border-radius: 10px;">
+                <div onclick=""
+                  style="margin-top: 0px; margin-left: 15px; width: 170px; padding-top: 5px; height: 50px; border-radius: 10px;">
+                  <div style="display: flex;">
+                    <img style=" margin-top: 5px; margin-left: 10px; width: 25px; height: 35px;"
+                      src="../assets/img/icons/giveup.png">
+                    <h1 style="margin-top: 2px; margin-left: 10px; font-size: 28px;">Desistir</h1>
+                  </div>
+                </div>
+                <div onclick=""
+                  style="margin-top: -50px; margin-left: 210px; width: 170px; padding-top: 5px; height: 50px; border-radius: 10px;">
+                  <div style="display: flex;">
+                    <img style=" margin-left: 5px; width: 40px; height: 40px;" src="../assets/img/icons/draw.png">
+                    <h1 style="margin-top: 2px; margin-left: 5px; font-size: 28px;">Empate</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-  </main>
+    </div>
+  </div>
+  <footer id="footer-container"></footer>
 
 
   <!-- =====Scripts================================================= -->
   <script src="../scripts/chessboardModals.js"></script>
   <script type="module" src="../scripts/createChessboard.js"></script>
 
-  <footer id="footer-container"></footer>
+
 
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../scripts/navigation.js" data-nav="../components/navbar.html" data-navcontainer="navbar-container"
