@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/chessBoard.css">
   <title>Chess</title>
 
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -48,8 +49,13 @@
     }
   </style>
 
+
   <script type="module" src="../scripts/pages/chessBoard.js" defer></script>
 </head>
+
+
+
+
 
 
 <body class="bg-dark-bg">
@@ -111,25 +117,8 @@
         </div>
       </div>
 
-      <!-- <div style="margin-right: -800px;" class="col">
-          <div><a id="minutes-black" style="margin-left: -140px; font-size: 40px; color: white; z-index: 11;">00</a>
-            <a style="font-size: 40px; color: white; z-index: 11;">:</a>
-            <a id="seconds-black" style="font-size: 40px; color: white; z-index: 11;">00</a>
-          </div>
-          <div id="minutes-white" style="margin-top: 310px;"><a style="margin-left: -140px; font-size: 40px; color: white; z-index: 11;">00</a>
-            <a style="font-size: 40px; color: white; z-index: 11;">:</a>
-            <a id="seconds-white" style="font-size: 40px; color: white; z-index: 11;">00</a>
-          </div>
-        </div>
-
-        <div style="color: white;margin-right: -700px; " class="col">
-          <div style="margin-left: -500px; margin-top: -20px;"><a id="username-adversario" style="font-size: 20px;">Adversario</a></div>
-          <div style="margin-left: -500px; margin-top: 420px;"><a id="username-jogador" style="font-size: 20px;">Jogador</a></div>
-        </div> -->
-
       <div class="col">
-        <div id="buscando-partida"
-          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+        <div id="buscando-partida" class="modalWrapper">
           <div id="janela">
             <div
               style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
@@ -161,8 +150,7 @@
           </div>
         </div>
 
-        <div id="buscar-partida"
-          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+        <div id="buscar-partida" class="modalWrapper">
           <div id="janela">
             <div
               style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">
@@ -173,9 +161,24 @@
                 style="margin-left: 20px; margin-top: 15px; width: 360px; height: 260px; background-color: #24272e; border-radius: 10px;">
                 <div id="janela-buscar">
                   <div id="jogo-modal-buscar">
-                    <div><img src="../assets/img/icons/blitz.png"></div>
+                    <div class="row d-flex justify-content-center">
+                      <button type="button" style="width: 60%; height: 60px;" class="btn btn-secondary active btn-lg mt-2">
+                        Ritmo Rápido  <img src="../assets/img/icons/rapid.png" style="width: 28px;">
+                      </button>
+                    </div>
+                    <div class="row mt-4 d-flex justify-content-center">
+                      <button type="button" style="width: 60%; height: 60px;" class="btn btn-secondary btn-lg">
+                        Ritmo Blitz  <img src="../assets/img/icons/blitz.png" style="width: 20px;">
+                      </button>
+                    </div>
+                    <div class="row mt-4 d-flex justify-content-center">
+                      <button type="button" style="width: 60%; height: 60px;" class="btn btn-secondary btn-lg">
+                        Ritmo Bullet  <img src="../assets/img/icons/bullet.png" style="width: 28px;">
+                      </button>
+                    </div>
+                    <!-- <div><img src="../assets/img/icons/blitz.png"></div>
                     <div><img src="../assets/img/icons/bullet.png"></div>
-                    <div><img src="../assets/img/icons/rapid.png"></div>
+                    <div><img src="../assets/img/icons/rapid.png"></div> -->
                   </div>
                 </div>
               </div>
@@ -192,8 +195,7 @@
           </div>
         </div>
 
-        <div id="em-partida"
-          style="margin-left: 80px; width: 450px; height: 450px; background-color: #24272e; border-radius: 10px;">
+        <div id="em-partida" class="modalWrapper">
           <div id="janela">
             <div
               style="margin-top: -85px; margin-left: 25px; width: 400px; height: 330px; background-color: #2d3039; border-radius: 10px;">

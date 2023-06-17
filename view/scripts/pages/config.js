@@ -1,6 +1,10 @@
 const pictureWrapper = document.querySelector("#pictureWrapper")
 const confirmBtn = document.querySelector("#confirmBtn")
 
+const tokenArmazenado = localStorage.getItem('auth_chess_user')
+const idArmazenado = localStorage.getItem('id_user')
+
+
 var formData = null;
 pictureWrapper.innerHTML = ''
 
@@ -8,7 +12,7 @@ pictureWrapper.innerHTML = ''
 function updateImg() {
     if (pictureWrapper.innerHTML == '') {
         pictureWrapper.innerHTML = `
-            <label class="picture" for="pictureInput" tabIndex="0">
+            <label class="picture mt-2" for="pictureInput" tabIndex="0">
                 <span class="pictureImg"></span>
             </label>
             <input type="file" name="pictureInput" id="pictureInput">
@@ -75,7 +79,26 @@ function confirm() {
 }
 
 
+// ===== execução ====================================================================================
 confirmBtn.onclick = confirm
 const alterImg = document.querySelector("#alterImg")
 alterImg.onclick = updateImg
+
+
+// ========--------------------------------------
+
+const config = {
+    headers: {
+        Authorization: `Bearer ${tokenArmazenado}`
+    }
+};
+
+axios.get('http://localhost:3000/users/'+idArmazenado, config)
+.then(response =>{
+    const user = response.data
+    console.log(user)
+    
+}).catch(e => {
+    console.error(e)
+})
 
