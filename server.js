@@ -12,6 +12,8 @@ const port = process.env.SERVER_PORT;
 // Define o diretório estático para servir o arquivo index.html
 app.use(express.static(__dirname + '/view'));
 
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 // Define o diretório estático para servir as dependencias de node modules
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
@@ -35,13 +37,13 @@ app.use('/config', configRouter);
 const userRouter = require('./server/routes/users');
 app.use('/users', userRouter);
 
+// image Api
+const pictureRouter = require("./server/routes/picture");
+app.use("/pictures", pictureRouter);
 
 
 //=================== EXECUÇÃO =========================================================== 
 // Inicia o servidor
-
-const banco_senha = encodeURIComponent('dbbvb327904')
-
 mongoose.connect(
   process.env.URL_DB
 ).then(() => {

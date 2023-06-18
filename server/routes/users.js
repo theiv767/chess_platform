@@ -49,7 +49,10 @@ router.post('/auth/register/', async (req, res) => {
         password: passwordHash,
         ratingrapid: 1000,
         ratingblitz: 1000,
-        ratingbullet: 1000
+        ratingbullet: 1000,
+        name: '',
+        status: '',
+        picture: ''
     }
 
     try {
@@ -65,8 +68,6 @@ router.post('/auth/register/', async (req, res) => {
 //Login
 router.post('/auth/login/', async (req, res, next) => {
     const { email, password } = req.body
-    console.log(email)
-    console.log(password)
 
     if (!email) {
         return res.status(201).json({ error: 'E-mail é obrigatório!' })
@@ -167,15 +168,25 @@ function checkToken(req, res, next) {
 router.patch('/:id', async (req, res) => {
     const id = req.params.id
 
-    const { username, email, password } = req.body
-
+    const { username, email, password, name, status, picture} = req.body
+    
     const person = {
         username,
         email,
-        password
+        password,
+        name,
+        status,
+        picture
     }
-
+    
     try {
+
+        if(password){
+            const salt = await bcrypt.genSalt(12)
+            const passwordHash = await bcrypt.hash(person.password, salt)
+            person.password = passwordHash
+        }
+        
         const updatedPerson = await Person.updateOne({ _id: id }, person)
 
         if (updatedPerson.matchedCount === 0) {

@@ -8,21 +8,24 @@ function logOut() {
 
 }
 
-
-
 axios.get(nav)
   .then((response) => {
     document.getElementById(container).innerHTML = response.data;
 
     if (localStorage.getItem('auth_chess_user')) {
-      console.log(localStorage.getItem('auth_chess_user'))
-
       let perfilBtn = document.getElementById("perfilDropdown")
-      console.log(perfilBtn)
       let linkPerfil = document.getElementById("perfil-link").href = 'perfil'
       let linkChessBoard = document.getElementById("chessBoard-link").href = 'jogar'
       let linkConfig = document.getElementById("config-link").href = 'config'
+      var navPerfil = document.getElementById("navPerfil")
 
+      axios.get('http://localhost:3000/pictures/'+localStorage.getItem('id_user'))
+        .then(response =>{
+            var imgSrc = response.data+''
+            console.log("resposta imagem: "+imgSrc)
+            console.log(navPerfil)
+            navPerfil.src = imgSrc;
+        })
       let btnLogout = document.getElementById("logout")
       if (btnLogout) {
         btnLogout.onclick = logOut
@@ -35,7 +38,7 @@ axios.get(nav)
       let linkChessBoard = document.getElementById("chessBoard-link").href = ''
       let linkConfig = document.getElementById("config-link").href = ''
     }
-    
+
 
 
     if (!(current == 'home')) {
@@ -50,3 +53,5 @@ axios.get(nav)
   .catch((error) => {
     console.error('Error, Get content error:', error);
   });
+
+
