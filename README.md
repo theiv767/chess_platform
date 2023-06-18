@@ -19,13 +19,17 @@ This repository contains a chess platform where users can play against each othe
 - Express.js: Web framework used to create APIs and manage routes on the server.
 - Axios: JavaScript library used to make HTTP requests to interact with the application's backend.
 - Bootstrap: Front-end framework used to create the responsive and styled user interface.
+- Multer: Middleware used for handling file uploads in Node.js applications.
 
 ## How to Run
 
-1. Make sure you have Node.js and MongoDB installed on your machine.
-2. Clone this repository to your development environment.
-3. In the terminal, navigate to the project's root directory.
-4. Run the command `npm install` to install the dependencies.
-5. Create a `.env` file in the project's root directory and set the required environment variables.
-6. Run the command `npm start` to start the backend server.
-7. Access the chess platform in your browser using the URL provided by the server.
+#### 1. Make sure you have Node.js and MongoDB installed on your machine.
+#### 2. Clone this repository to your development environment.
+#### 3. In the terminal, navigate to the project's root directory.
+#### 4. Run the command `npm install` to install the dependencies.
+#### 5. Create a `.env` file in the project's root directory and set the required environment variables:
+  - SERVER_PORT: `the port on which the server will be running.`
+  - URL_DB: `the endpoint of the MongoDB to which the application will connect.`
+  - SECRET: `a hash code used to create JWT tokens.`
+#### 6. Run the command `npm start` to start the backend server.
+#### 7. Access the chess platform in your browser using the URL provided by the server.
