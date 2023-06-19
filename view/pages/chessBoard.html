@@ -47,6 +47,11 @@
       object-fit: contain;
       z-index: 10;
     }
+
+    .relogio{
+      
+
+    }
   </style>
 
 
@@ -98,22 +103,37 @@
   <div style="margin-top: -20px; user-select: none;" class="container-fluid">
     <div class="row m-4">
       <div class="col-6">
-        <div class="container-fluid  text-center">
-          <a id="username-adversario"
-            style="font-size: 25px; margin-left: 10px ;margin-right: 200px; color: white;">Adversário</a>
-          <a class="text-center" id="minutos-adversario" style="font-size: 30px; color: white;">00</a>
-          <a class="text-center" style="font-size: 30px; color: white;">:</a>
-          <a class="text-center" id="segundos-adversario" style="font-size: 30px; color: white;">00</a>
+        <div class="container-fluid  text-center mb-2">
+          <div class="row">
+            <div class="col-6 " style="margin-left: 10px">
+              <a id="username-adversario"style="font-size: 25px ;color: white;">Adversário</a>
+            </div>
+            <div class="col">
+              <div class="relogio">
+                <a class="text-center" id="minutos-adversario" style="font-size: 30px; color: white; text-decoration: none;">00</a>
+                <a class="text-center" style="font-size: 30px; color: white; text-decoration: none;">:</a>
+                <a class="text-center" id="segundos-adversario" style="font-size: 30px; color: white; text-decoration: none;">00</a>
+              </div>
+            </div>  
+          </div>
+          
         </div>
         <div id="chessBoard-container" class="container text-center"
-          style="margin-top: 15px; min-width: 200px; min-height: 200px;">
+          style="min-width: 200px; min-height: 200px;">
         </div>
-        <div class="container-fluid text-center">
-          <a id="username-jogador"
-            style="font-size: 25px; margin-left: 10px ;margin-right: 230px; color: white;">Jogador</a>
-          <a class="text-center" id="minutos-jogador" style="font-size: 30px; color: white;">00</a>
-          <a class="text-center" style="font-size: 30px; color: white;">:</a>
-          <a class="text-center" id="segundos-jogador" style="font-size: 30px; color: white;">00</a>
+        <div class="container-fluid text-center mt-2">
+          <div class="row">
+            <div class="col-6 " style="margin-left: 10px">
+              <a id="username-jogador"style="font-size: 25px; color: white;">Jogador</a>
+            </div>
+            <div class="col">
+              <div class="relogio ">
+                <a class="text-center" id="minutos-jogador" style="font-size: 30px; color: white; text-decoration: none;">00</a>
+                <a class="text-center" style="font-size: 30px; color: white; text-decoration: none;">:</a>
+                <a class="text-center" id="segundos-jogador" style="font-size: 30px; color: white; text-decoration: none;">00</a>
+              </div>
+            </div>  
+          </div>
         </div>
       </div>
 
