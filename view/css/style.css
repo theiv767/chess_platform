@@ -359,4 +359,6 @@ main{
    height: 80vh;
 }
 
-
+.relogio a {
+  font-family: 'Chakra Petch', sans-serif;
+}
