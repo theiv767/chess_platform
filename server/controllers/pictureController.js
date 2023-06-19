@@ -6,6 +6,12 @@ exports.create = async (req, res) => {
   try {
     const { name, userId } = req.body;
 
+    const pictureTest = await Picture.findOne({ userId })
+    if(pictureTest){
+      fs.unlinkSync(pictureTest.src);
+      await Picture.deleteOne({ userId });
+    }
+
     const file = req.file;
     const picture = new Picture({
       name,
@@ -15,11 +21,9 @@ exports.create = async (req, res) => {
 
     await picture.save();
 
-    // IMPORTANTE !!!
-    //verificar se o userId já tinha alguma imagem, se tiver: revomer imagem antiga
-
     console.log(picture)
     res.json(picture);
+
   } catch (err) {
     console.log("erro ao salvar imagem")
     console.log(err)
